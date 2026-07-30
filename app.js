@@ -46,15 +46,32 @@ evidenceButtons.forEach((button) => {
 });
 
 function getSolanaProvider() {
-  if ("solana" in window && window.solana?.isPhantom) return window.solana;
-  if ("solana" in window) return window.solana;
-  if ("solflare" in window) return window.solflare;
+  const candidates = [
+    window.solana,
+    window.solflare,
+    window.Solflare,
+    ...(Array.isArray(window.solana?.providers) ? window.solana.providers : []),
+  ].filter(Boolean);
+  return (
+    candidates.find((provider) => provider?.isSolflare) ??
+    candidates.find((provider) => provider?.isPhantom) ??
+    candidates.find((provider) => provider?.publicKey || provider?.connect) ??
+    null
+  );
+}
+
+async function waitForSolanaProvider() {
+  for (let attempt = 0; attempt < 12; attempt += 1) {
+    const provider = getSolanaProvider();
+    if (provider) return provider;
+    await wait(250);
+  }
   return null;
 }
 
 function getProviderName(provider) {
   if (provider?.isPhantom) return "Phantom";
-  if (provider?.isSolflare || provider === window.solflare) return "Solflare";
+  if (provider?.isSolflare || provider === window.solflare || provider === window.Solflare) return "Solflare";
   return "Solana wallet";
 }
 
@@ -107,16 +124,26 @@ function buildReport() {
 }
 
 async function connectWallet() {
-  const provider = getSolanaProvider();
+  walletNote.textContent = "Checking browser wallet providers...";
+  const provider = await waitForSolanaProvider();
   if (!provider) {
+    const detected = [
+      window.solana ? "window.solana" : null,
+      window.solflare ? "window.solflare" : null,
+      window.Solflare ? "window.Solflare" : null,
+    ]
+      .filter(Boolean)
+      .join(", ");
     walletNote.textContent =
-      "No Solana wallet found. Enable Solflare or Phantom on this site, then refresh and connect again.";
+      detected
+        ? `Detected ${detected}, but no connectable Solana provider was exposed. Open Solflare, unlock it, allow this site, then refresh.`
+        : "No Solana wallet provider exposed to this page. Open Solflare, unlock it, allow this site, then refresh.";
     walletPill.textContent = "Wallet missing";
     return null;
   }
 
   try {
-    const response = await provider.connect();
+    const response = await provider.connect({ onlyIfTrusted: false });
     const publicKey = response.publicKey ?? provider.publicKey;
     const address = publicKey.toString();
     walletPill.textContent = `${getProviderName(provider)} ${shortAddress(address)}`;
