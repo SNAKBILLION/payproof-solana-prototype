@@ -1,65 +1,78 @@
-# PayProof Apply Roadmap
+# PayProof Builder Roadmap
 
-## Locked positioning
+## Locked category
 
-PayProof is an Income Trust Layer that creates privacy-safe repayment readiness credentials for people without salary slips.
+PayProof is an **Invisible Commerce Proof Network**, not a credit-score app.
 
-Use this framing everywhere:
+The product proves that commerce happened across independent source systems,
+explains how a lender policy treated that evidence, and gives the merchant control
+over what can be verified.
 
-- We verify income evidence.
-- We protect raw financial data.
-- We anchor proof and consent on-chain.
-- We help reviewers make better manual credit decisions.
-- We do not issue loans.
+## Program-ready milestone
 
-Avoid these phrases:
+The current build is ready for technical review when the application includes:
 
-- credit score
-- instant loan approval
-- replacing credit bureaus
-- blockchain lending platform
+- live product URL;
+- public source repository;
+- 90-second product walkthrough;
+- one real devnet transaction;
+- one sample CSV bundle;
+- architecture and privacy diagram;
+- explicit pilot ask.
 
-## Fast-response priority
+## Priority applications
 
-### 1. Superteam Instagrants / Earn
+1. Superteam Earn bounties and Instagrants aligned with merchant tooling, identity or payments.
+2. Solana Foundation grant tracks for attestations, identity and public infrastructure.
+3. Solana ecosystem accelerators that fund early working products.
+4. India fintech sandboxes and financial-inclusion programs after a lender design partner signs.
 
-Best angle: PayProof for India small UPI merchants on Solana.
+Programs change frequently, so dates, eligibility and funding terms must be
+re-verified immediately before each application.
 
-Application hook: Small merchants in India earn through UPI but cannot prove repayment capacity. PayProof converts UPI and invoice evidence into a Solana-anchored income credential and consent receipt.
+## Twelve-week pilot
 
-Need before apply:
+### Weeks 1-3: evidence connectors
 
-- Working product link
-- GitHub repo
-- 60-90 second demo video
-- Clear ask: $3k-$10k to ship pilot
+- CSV templates for UPI, bank, invoice and order exports.
+- Signed source adapters for two commerce platforms.
+- Duplicate and self-transfer controls.
+- Merchant case consent and deletion controls.
 
-### 2. Solana Foundation India Grant
+### Weeks 4-6: issuer and verifier
 
-Best angle: India builder with a working product.
+- Authenticated case vault.
+- Server-side issuer keys.
+- Organization-scoped lender access.
+- Credential status, expiry and revocation.
+- Downloadable decision receipt.
 
-Apply after the MVP feels real. This should not be only an idea submission.
+### Weeks 7-9: Solana trust rail
 
-### 3. Solana Foundation standard grant
+- Solana Attestation Service schema.
+- Merchant-wallet subject binding.
+- Revocation registry.
+- Repayment outcome attestation without exposing loan terms.
 
-Best angle: Solana public-good identity and merchant credit-readiness infrastructure.
+### Weeks 10-12: measured pilot
 
-### 4. Superteam Earn bounties
+- 25 merchants.
+- Two review partners.
+- Compare manual verification time before and after PayProof.
+- Track evidence completion, policy replay and consent revocation.
 
-Best angle: turn pieces of PayProof into smaller proof-of-work tasks: wallet connection, devnet proof anchoring, verifier page, and merchant pilot docs.
+## Success metrics
 
-## Build sequence
+- Median evidence-review time reduced by at least 50%.
+- At least 70% of pilot cases produce two-source revenue coverage above 65%.
+- Zero raw documents exposed through verifier links.
+- Every decision can be replayed from a versioned policy receipt.
+- Merchant consent can be expired or revoked.
 
-1. Working MVP: case room, evidence vault, AI pipeline, fraud flags, proof hash and verifier page.
-2. Solana integration: wallet connect and devnet Memo proof anchoring.
-3. Solana privacy upgrade: threshold attestation so verifier sees "above Rs 35k/month" instead of source documents.
-4. Submission assets: 6-slide deck, 90-second demo video, GitHub README and architecture diagram.
+## Defensible moat
 
-## 6-slide deck outline
+The moat is not a model-generated score. It is the growing library of source
+adapters, reconciliation rules, fraud controls, lender policy templates and
+repayment outcome attestations that make invisible commerce portable.
 
-1. Problem: informal earners have income but no trusted proof.
-2. Solution: privacy-safe income and repayment readiness credential.
-3. Product flow: upload, AI verify, generate proof, verifier link.
-4. Why blockchain: tamper-resistant credential, consent log, portability.
-5. Market/use case: UPI merchants, freelancers, gig earners, rent and credit review.
-6. Ask: grant/funding to build chain integration and run first pilot.
+

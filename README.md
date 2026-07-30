@@ -1,29 +1,97 @@
 # PayProof
 
-Income Trust Layer for people without salary slips.
+**Invisible commerce, verified.**
 
-## Product Flow
+PayProof turns fragmented orders, invoices, UPI settlements and bank credits into
+explainable, privacy-safe evidence for working-capital review.
 
-Open `index.html` in a browser.
+## Why this exists
 
-MVP flow:
+Small merchants often have real commerce but weak documentation. Their activity
+lives across WhatsApp orders, invoice files, payment apps and bank credits.
+PayProof reconciles those records into revenue events without creating a generic
+credit score or giving a lender access to the merchant's raw financial history.
 
-1. Click `Enter Case Room` or `Run Product Flow`.
-2. Connect a Solana wallet such as Solflare or Phantom on devnet.
-3. Run the AI pipeline across the Evidence Vault.
-4. Review the Repayment Readiness Report.
-5. Click `Anchor Proof on Devnet`.
-6. Show the verifier moment: income threshold verified, raw documents hidden, consent-bound proof hash generated, and Solana devnet transaction linked.
+## Working product
 
-## Solana integration
+- Import CSV or JSON records from four evidence sources.
+- Normalize and reconcile records into cross-source revenue events.
+- Preserve the provenance chain and confidence for every event.
+- Run a replayable lender policy with explicit pass/fail reasons.
+- Generate a purpose-bound proof passport with merchant-controlled disclosure.
+- Hash source evidence into a Merkle root and SHA-256 credential commitment.
+- Show a verifier only the allowed claims, never the raw source records.
+- Connect Phantom or Solflare and anchor the commitment through Solana Memo on devnet.
 
-The current MVP creates a SHA-256 hash of the repayment readiness report and writes it to Solana devnet through the Memo program. The verifier panel displays the credential hash, issuer wallet and explorer transaction link.
+## Product flow
 
-## Submission assets
+1. Load the pilot case or import local CSV/JSON evidence.
+2. Review verified, supported and unmatched commerce events.
+3. Run the working-capital second-look policy.
+4. Choose claims and consent expiry.
+5. Generate the private commitment.
+6. Open the lender view.
+7. Optionally connect a Solana wallet and anchor the commitment on devnet.
 
-- `SUBMISSION.md`: one-line pitch, problem, solution, demo script and short application answer.
-- `APPLY_ROADMAP.md`: Solana/Superteam-focused roadmap, positioning, deck outline and next build steps.
+## Local development
 
-## Locked framing
+```bash
+pnpm install
+pnpm dev
+```
 
-PayProof is not a lender and does not issue a credit score. It creates an income reliability and repayment readiness credential that helps lenders, landlords or clients manually review informal earners without forcing them to expose raw financial documents.
+Production checks:
+
+```bash
+pnpm build
+pnpm test
+pnpm lint
+```
+
+## Import schema
+
+PayProof accepts flexible CSV/JSON field names. A canonical row looks like:
+
+```json
+{
+  "id": "ORD-1042",
+  "source": "order",
+  "timestamp": "2026-06-28T10:30:00.000Z",
+  "amount": 12600,
+  "counterparty": "Field Office Co",
+  "reference": "FO-126"
+}
+```
+
+Valid source values are `order`, `invoice`, `bank` and `settlement`. Imported
+files are processed in the browser and are not uploaded by the current product.
+
+## Architecture
+
+```mermaid
+flowchart LR
+  A[Orders] --> E[Evidence normalizer]
+  B[Invoices] --> E
+  C[UPI settlements] --> E
+  D[Bank credits] --> E
+  E --> F[Revenue event graph]
+  F --> G[Explainable policy engine]
+  G --> H[Consent-bound proof passport]
+  H --> I[Lender verifier]
+  H --> J[Solana commitment]
+```
+
+## Trust boundaries
+
+PayProof is not a lender, bureau score or automatic approval engine. It creates
+decision evidence for human review. Raw evidence remains off-chain; only a
+credential commitment and minimal proof metadata are written to Solana.
+
+## Current scope
+
+This repository contains a production-grade browser application and a real Solana
+devnet transaction path. A full deployment should add authenticated case storage,
+issuer key management, revocation, lender organizations and repayment outcome
+attestations.
+
+
