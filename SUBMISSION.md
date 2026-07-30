@@ -21,9 +21,9 @@ Millions of informal earners have real cashflow but no trusted way to prove it. 
 - A credential hash, timestamp and consent receipt are anchored on-chain.
 - A lender, landlord or client verifies the summary through a shareable link.
 
-## Hackathon demo wedge
+## Builder program wedge
 
-The demo is not a generic dashboard. It is a live case room:
+The MVP is not a generic dashboard. It is a live case room:
 
 1. Ravi is a small UPI merchant applying for working capital review.
 2. Judges see the Evidence Vault with UPI, invoice, SMS and excluded cash evidence.
@@ -37,7 +37,7 @@ The demo is not a generic dashboard. It is a live case room:
 
 PayProof is not a lender, credit bureau or loan approval engine. It is a verification layer that helps lenders and reviewers make better manual decisions while protecting user privacy.
 
-## Winning demo flow
+## Winning product flow
 
 1. Ravi, a small UPI merchant, uploads UPI screenshots, a freelance invoice and bank SMS.
 2. PayProof extracts income evidence and identifies reliability signals.
@@ -55,12 +55,12 @@ PayProof is not a lender, credit bureau or loan approval engine. It is a verific
 
 ## Solana technical proof
 
-The current prototype is Solana-focused. It hashes the structured repayment readiness report with SHA-256, asks the connected wallet to sign a devnet transaction, and writes the proof memo to Solana's Memo program. The verifier screen shows the report hash, issuer wallet and Solana explorer link.
+The current MVP is Solana-focused. It hashes the structured repayment readiness report with SHA-256, asks the connected wallet to sign a devnet transaction, and writes the proof memo to Solana's Memo program. The verifier screen shows the report hash, issuer wallet and Solana explorer link.
 
 ## Why this can win
 
 - Real user pain: informal earners have cashflow but no trusted proof.
-- Clear demo moment: prove "above Rs 35k/month" without exposing bank history.
+- Clear product moment: prove "above Rs 35k/month" without exposing bank history.
 - Useful AI: extraction, fraud flags and conservative cashflow modeling.
 - Useful crypto: portable, tamper-resistant and consent-bound credential.
 - Controlled regulatory risk: PayProof does not approve or issue loans.
