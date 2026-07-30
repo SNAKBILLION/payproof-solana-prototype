@@ -29,7 +29,7 @@ Application hook: Small merchants in India earn through UPI but cannot prove rep
 
 Need before apply:
 
-- Working demo link
+- Working product link
 - GitHub repo
 - 60-90 second demo video
 - Clear ask: $3k-$10k to ship pilot
@@ -50,7 +50,7 @@ Best angle: turn pieces of PayProof into smaller proof-of-work tasks: wallet con
 
 ## Build sequence
 
-1. Premium demo MVP: case room, evidence vault, AI pipeline, fraud flags, proof hash and verifier page.
+1. Working MVP: case room, evidence vault, AI pipeline, fraud flags, proof hash and verifier page.
 2. Solana integration: wallet connect and devnet Memo proof anchoring.
 3. Solana privacy upgrade: threshold attestation so verifier sees "above Rs 35k/month" instead of source documents.
 4. Submission assets: 6-slide deck, 90-second demo video, GitHub README and architecture diagram.
@@ -59,7 +59,7 @@ Best angle: turn pieces of PayProof into smaller proof-of-work tasks: wallet con
 
 1. Problem: informal earners have income but no trusted proof.
 2. Solution: privacy-safe income and repayment readiness credential.
-3. Demo flow: upload, AI verify, generate proof, verifier link.
+3. Product flow: upload, AI verify, generate proof, verifier link.
 4. Why blockchain: tamper-resistant credential, consent log, portability.
 5. Market/use case: UPI merchants, freelancers, gig earners, rent and credit review.
 6. Ask: grant/funding to build chain integration and run first pilot.
