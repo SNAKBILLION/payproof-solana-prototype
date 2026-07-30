@@ -2,14 +2,14 @@
 
 Income Trust Layer for people without salary slips.
 
-## Demo
+## Product Flow
 
 Open `index.html` in a browser.
 
-Demo flow:
+MVP flow:
 
-1. Click `Enter Case Room` or `Run Full Demo`.
-2. Connect a Solana wallet such as Phantom on devnet.
+1. Click `Enter Case Room` or `Run Product Flow`.
+2. Connect a Solana wallet such as Solflare or Phantom on devnet.
 3. Run the AI pipeline across the Evidence Vault.
 4. Review the Repayment Readiness Report.
 5. Click `Anchor Proof on Devnet`.
@@ -17,7 +17,7 @@ Demo flow:
 
 ## Solana integration
 
-The prototype creates a SHA-256 hash of the repayment readiness report and writes it to Solana devnet through the Memo program. The verifier panel displays the credential hash, issuer wallet and explorer transaction link.
+The current MVP creates a SHA-256 hash of the repayment readiness report and writes it to Solana devnet through the Memo program. The verifier panel displays the credential hash, issuer wallet and explorer transaction link.
 
 ## Submission assets
 
