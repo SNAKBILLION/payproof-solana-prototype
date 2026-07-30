@@ -48,7 +48,14 @@ evidenceButtons.forEach((button) => {
 function getSolanaProvider() {
   if ("solana" in window && window.solana?.isPhantom) return window.solana;
   if ("solana" in window) return window.solana;
+  if ("solflare" in window) return window.solflare;
   return null;
+}
+
+function getProviderName(provider) {
+  if (provider?.isPhantom) return "Phantom";
+  if (provider?.isSolflare || provider === window.solflare) return "Solflare";
+  return "Solana wallet";
 }
 
 function wait(ms) {
@@ -103,7 +110,7 @@ async function connectWallet() {
   const provider = getSolanaProvider();
   if (!provider) {
     walletNote.textContent =
-      "No Solana wallet found. Install Phantom or another Solana wallet to anchor a real devnet transaction.";
+      "No Solana wallet found. Enable Solflare or Phantom on this site, then refresh and connect again.";
     walletPill.textContent = "Wallet missing";
     return null;
   }
@@ -112,7 +119,7 @@ async function connectWallet() {
     const response = await provider.connect();
     const publicKey = response.publicKey ?? provider.publicKey;
     const address = publicKey.toString();
-    walletPill.textContent = `Wallet ${shortAddress(address)}`;
+    walletPill.textContent = `${getProviderName(provider)} ${shortAddress(address)}`;
     walletNote.textContent =
       "Wallet connected. After AI verification, PayProof will anchor the report hash to Solana devnet using the Memo program.";
     issuerWallet.textContent = address;
@@ -209,8 +216,14 @@ async function anchorProof() {
     const { blockhash, lastValidBlockHeight } = await connection.getLatestBlockhash();
     transaction.recentBlockhash = blockhash;
 
-    const signed = await provider.signTransaction(transaction);
-    const signature = await connection.sendRawTransaction(signed.serialize());
+    let signature;
+    if (typeof provider.signAndSendTransaction === "function") {
+      const result = await provider.signAndSendTransaction(transaction);
+      signature = typeof result === "string" ? result : result.signature;
+    } else {
+      const signed = await provider.signTransaction(transaction);
+      signature = await connection.sendRawTransaction(signed.serialize());
+    }
     await connection.confirmTransaction({ signature, blockhash, lastValidBlockHeight }, "confirmed");
 
     const explorerUrl = `${DEVNET_EXPLORER}/${signature}?cluster=devnet`;
