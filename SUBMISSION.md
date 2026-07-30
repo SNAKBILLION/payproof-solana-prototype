@@ -64,17 +64,15 @@ The current prototype is Solana-focused. It hashes the structured repayment read
 - Useful AI: extraction, fraud flags and conservative cashflow modeling.
 - Useful crypto: portable, tamper-resistant and consent-bound credential.
 - Controlled regulatory risk: PayProof does not approve or issue loans.
-- Easy sponsor adaptation: Solana, Celo, Base, World, attestations or ZK threshold proof.
+- Strong ecosystem fit: Solana wallet connection, devnet proof anchoring, and Superteam India merchant use case.
 
 ## Recommended first applications
 
 1. Superteam Instagrants / Superteam Earn
 2. Solana Foundation India Grant
-3. Celo Builder Fund
-4. Interledger Local Impact Mini-Grants
-5. Stellar Community Fund
-6. ETHOnline 2026
-7. ETHGlobal Mumbai 2026
+3. Solana Foundation standard grant
+4. Solana hackathons / Superteam Earn bounties
+5. Solana ecosystem demo days and India builder calls
 
 ## Short application answer
 

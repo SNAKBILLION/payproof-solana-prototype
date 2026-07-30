@@ -22,7 +22,7 @@ The prototype creates a SHA-256 hash of the repayment readiness report and write
 ## Submission assets
 
 - `SUBMISSION.md`: one-line pitch, problem, solution, demo script and short application answer.
-- `APPLY_ROADMAP.md`: fast-response grant priority, positioning, deck outline and next build steps.
+- `APPLY_ROADMAP.md`: Solana/Superteam-focused roadmap, positioning, deck outline and next build steps.
 
 ## Locked framing
 

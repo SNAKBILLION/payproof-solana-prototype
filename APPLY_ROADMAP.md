@@ -34,33 +34,25 @@ Need before apply:
 - 60-90 second demo video
 - Clear ask: $3k-$10k to ship pilot
 
-### 2. Celo Builder Fund
-
-Best angle: Mobile-first financial access for emerging markets.
-
-Application hook: PayProof gives informal earners a mobile credential to prove income without oversharing private statements. Celo/stablecoin rails can support future verified repayment and merchant credit.
-
-### 3. Interledger Local Impact Mini-Grants
-
-Best angle: Financial inclusion and open payments.
-
-Application hook: PayProof helps local workers and small merchants participate in safer digital credit review by proving income and consent without giving away private records.
-
-### 4. Solana Foundation India Grant
+### 2. Solana Foundation India Grant
 
 Best angle: India builder with a working product.
 
 Apply after the MVP feels real. This should not be only an idea submission.
 
-### 5. ETHOnline 2026
+### 3. Solana Foundation standard grant
 
-Best angle: AI x crypto, consumer crypto, identity, privacy and public-good finance.
+Best angle: Solana public-good identity and merchant credit-readiness infrastructure.
+
+### 4. Superteam Earn bounties
+
+Best angle: turn pieces of PayProof into smaller proof-of-work tasks: wallet connection, devnet proof anchoring, verifier page, and merchant pilot docs.
 
 ## Build sequence
 
 1. Premium demo MVP: case room, evidence vault, AI pipeline, fraud flags, proof hash and verifier page.
 2. Solana integration: wallet connect and devnet Memo proof anchoring.
-3. Privacy upgrade: threshold proof or attestation so verifier sees "above Rs 35k/month" instead of source documents.
+3. Solana privacy upgrade: threshold attestation so verifier sees "above Rs 35k/month" instead of source documents.
 4. Submission assets: 6-slide deck, 90-second demo video, GitHub README and architecture diagram.
 
 ## 6-slide deck outline
