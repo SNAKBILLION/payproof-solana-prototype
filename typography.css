@@ -1,0 +1,184 @@
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url("/payproof-solana-prototype/fonts/ibm-plex-sans-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("/payproof-solana-prototype/fonts/ibm-plex-mono-400-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("/payproof-solana-prototype/fonts/ibm-plex-mono-500-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("/payproof-solana-prototype/fonts/ibm-plex-mono-600-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+:root {
+  --font-sans: "IBM Plex Sans", "Segoe UI", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", "Cascadia Mono", Consolas, monospace;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.45;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+strong {
+  font-family: var(--font-sans);
+  letter-spacing: 0;
+}
+
+.brand-lockup strong { font-size: 17px; font-weight: 600; }
+.brand-lockup small { font-size: 12px; }
+.main-nav > p { font-size: 11px; font-weight: 600; }
+.nav-item { font-size: 13px; font-weight: 500; }
+.privacy-box strong { font-size: 13px; font-weight: 600; }
+.privacy-box span { font-size: 11px; line-height: 1.5; }
+.sidebar-footer strong { font-size: 12px; font-weight: 600; }
+.sidebar-footer span { font-size: 10px; }
+.crumb { font-size: 12px; }
+.topbar h1 { font-size: 20px; font-weight: 600; line-height: 1.2; }
+.network-pill,
+.standard-pill,
+.access-pill { font-size: 12px; font-weight: 500; }
+.eyebrow,
+.panel-kicker { font-size: 11px; font-weight: 600; }
+.case-banner h2,
+.section-title h2,
+.verifier-toolbar h2 {
+  font-size: clamp(28px, 3vw, 38px);
+  font-weight: 600;
+  line-height: 1.12;
+}
+.case-banner p,
+.section-title p,
+.verifier-toolbar p { font-size: 15px; line-height: 1.55; }
+.button { font-size: 13px; font-weight: 600; }
+.metric-head { font-size: 12px; }
+.metric > strong {
+  font-size: 26px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.metric > small { font-size: 11px; }
+.panel-header h3 { font-size: 17px; font-weight: 600; }
+.panel-count,
+.policy-version { font-size: 10px; }
+.source-icon {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+}
+.source-row strong { font-size: 13px; font-weight: 600; }
+.source-row small { font-size: 11px; }
+.source-state { font-size: 10px; font-weight: 600; }
+.search-field input { font-size: 12px; }
+.event-table th { font-size: 10px; font-weight: 600; }
+.event-table td { font-size: 12px; font-variant-numeric: tabular-nums; }
+.event-table td > span { font-size: 10px; }
+.money-cell {
+  font-family: var(--font-mono);
+  font-size: 11px !important;
+  font-weight: 500;
+}
+.chain i {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 600;
+}
+.confidence-cell b {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+}
+.status { font-size: 10px !important; font-weight: 600; }
+.empty-state h3 { font-size: 19px; font-weight: 600; }
+.empty-state p { font-size: 13px; line-height: 1.55; }
+.decision-badge span { font-size: 10px; }
+.decision-badge strong { font-size: 15px; font-weight: 600; }
+.policy-copy strong { font-size: 13px; font-weight: 600; }
+.policy-copy span { font-size: 11px; }
+.policy-copy code { font-family: var(--font-mono); font-size: 9px; }
+.policy-value strong {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+}
+.policy-value span { font-size: 10px; }
+.outcome-score strong {
+  font-size: 44px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.outcome-score span,
+.outcome-panel dl div { font-size: 11px; }
+.outcome-panel dd { font-family: var(--font-mono); font-weight: 500; }
+.gap-panel strong,
+.consent-row strong,
+.expiry-control strong,
+.privacy-notice strong { font-size: 12px; font-weight: 600; }
+.gap-panel p,
+.consent-row small { font-size: 10px; line-height: 1.55; }
+.expiry-control span,
+.segmented button { font-size: 10px; }
+.segmented button { font-weight: 600; }
+.import-modal h2 { font-size: 27px; font-weight: 600; }
+.sample-badge { font-weight: 600; }
+.merchant-profile-head p { font-size: 12px; }
+.merchant-context-grid dt,
+.merchant-wallet-row span { font-size: 10px; }
+.merchant-context-grid dd { font-weight: 600; }
+.merchant-wallet-row strong { font-size: 12px; font-weight: 500; }
+.wallet-toast { font-size: 12px; line-height: 1.5; }
+.privacy-notice p { font-size: 10px; line-height: 1.5; }
+.passport-top > div span { font-size: 10px; }
+.passport-top strong { font-size: 23px; font-weight: 600; }
+.passport-top small { font-size: 11px; }
+.claim-band span { font-size: 12px; font-weight: 500; }
+.claim-band strong { font-size: 20px; font-weight: 600; }
+.claim-grid span { font-size: 10px; }
+.claim-grid strong { font-size: 16px; font-weight: 600; }
+.commitment-block span { font-size: 10px; }
+.commitment-block code,
+.chain-step code,
+.verify-audit code { font-size: 9px; }
+.passport-footer { font-size: 10px; }
+.chain-live { font-size: 10px; font-weight: 600; }
+.chain-step strong { font-size: 11px; font-weight: 600; }
+.proof-message { font-size: 10px; line-height: 1.55; }
+.verify-brand small,
+.verified-pill,
+.verify-score span,
+.verifier-claim small,
+.verify-audit span,
+.verification-sheet > footer { font-size: 10px; }
+.verified-pill { font-weight: 600; }
+.verify-hero h3 { font-size: 32px; font-weight: 600; }
+.verify-hero p { font-size: 13px; }
+.verify-score strong { font-size: 36px; font-weight: 600; }
+.verifier-claim strong { font-size: 13px; font-weight: 600; }
+.verify-audit strong { font-size: 12px; }
