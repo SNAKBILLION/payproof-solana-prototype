@@ -1,0 +1,6 @@
+id,source,timestamp,amount,counterparty,reference
+inv-101,invoice,2026-04-03T09:18:00.000Z,4200,Northstar Studio,PP-APR-101
+inv-103,invoice,2026-04-20T11:00:00.000Z,12000,Locale Events,PP-APR-103
+inv-201,invoice,2026-05-05T08:16:00.000Z,7600,Northstar Studio,PP-MAY-201
+inv-203,invoice,2026-05-22T09:00:00.000Z,8600,Saanjh Collective,PP-MAY-203
+inv-302,invoice,2026-06-14T10:00:00.000Z,15400,Locale Events,PP-JUN-302

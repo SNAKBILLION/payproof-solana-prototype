@@ -1,0 +1,4 @@
+id,source,timestamp,amount,counterparty,reference
+upi-102,settlement,2026-04-11T07:04:00.000Z,6800,Saanjh Collective,PP-APR-102
+upi-201,settlement,2026-05-05T08:50:00.000Z,7600,Northstar Studio,PP-MAY-201
+upi-301,settlement,2026-06-04T09:34:00.000Z,9800,Northstar Studio,PP-JUN-301
