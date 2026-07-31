@@ -75,4 +75,3 @@ The moat is not a model-generated score. It is the growing library of source
 adapters, reconciliation rules, fraud controls, lender policy templates and
 repayment outcome attestations that make invisible commerce portable.
 
-

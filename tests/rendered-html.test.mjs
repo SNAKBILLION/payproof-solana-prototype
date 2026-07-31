@@ -58,4 +58,3 @@ test("ships the production app without the disposable starter or legacy static s
   );
   await access(new URL("../public/og.png", import.meta.url));
 });
-

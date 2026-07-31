@@ -56,4 +56,3 @@ Fund a 12-week pilot with 25 merchants and two lending or invoice-finance partne
 Milestones: authenticated case vault, issuer service, SAS attestation and revocation,
 lender policy templates, and measured reduction in manual verification time.
 
-

@@ -23,6 +23,18 @@ credit score or giving a lender access to the merchant's raw financial history.
 - Show a verifier only the allowed claims, never the raw source records.
 - Connect Phantom or Solflare and anchor the commitment through Solana Memo on devnet.
 
+## Submission kit
+
+- Live product: https://payproof-network.rohiy1347.chatgpt.site/
+- Sample evidence bundle:
+  https://payproof-network.rohiy1347.chatgpt.site/samples/payproof-pilot-evidence.zip
+- 90-second product demo:
+  https://payproof-network.rohiy1347.chatgpt.site/downloads/PayProof-90s-Demo.mp4
+- Six-slide grant deck:
+  https://payproof-network.rohiy1347.chatgpt.site/downloads/PayProof-Grant-Deck.pptx
+- Funding applications: [APPLICATION_PACK.md](APPLICATION_PACK.md)
+- Demo narration: [artifacts/DEMO_SCRIPT.md](artifacts/DEMO_SCRIPT.md)
+
 ## Product flow
 
 1. Load the pilot case or import local CSV/JSON evidence.
@@ -93,5 +105,3 @@ This repository contains a production-grade browser application and a real Solan
 devnet transaction path. A full deployment should add authenticated case storage,
 issuer key management, revocation, lender organizations and repayment outcome
 attestations.
-
-

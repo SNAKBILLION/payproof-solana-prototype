@@ -1,0 +1,11 @@
+id,source,timestamp,amount,counterparty,reference
+upi-101,bank,2026-04-03T10:02:00.000Z,4200,Northstar Studio,PP-APR-101
+upi-103,bank,2026-04-21T05:30:00.000Z,12000,Locale Events,PP-APR-103
+upi-104,bank,2026-04-27T09:06:00.000Z,9100,Northstar Studio,PP-APR-104
+upi-202,bank,2026-05-13T09:15:00.000Z,14200,Locale Events,PP-MAY-202
+upi-203,bank,2026-05-22T09:44:00.000Z,8600,Saanjh Collective,PP-MAY-203
+upi-204,bank,2026-05-29T07:01:00.000Z,11800,Field Office Co,PP-MAY-204
+upi-302,bank,2026-06-14T10:48:00.000Z,15400,Locale Events,PP-JUN-302
+upi-303,bank,2026-06-21T08:02:00.000Z,7200,Saanjh Collective,PP-JUN-303
+upi-304,bank,2026-06-28T07:25:00.000Z,12600,Field Office Co,PP-JUN-304
+bank-x1,bank,2026-06-29T13:00:00.000Z,25000,Own Account Transfer,SELF-TRANSFER

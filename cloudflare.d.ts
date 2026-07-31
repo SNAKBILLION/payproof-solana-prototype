@@ -11,4 +11,3 @@ declare module "cloudflare:workers" {
     DB?: D1Database;
   };
 }
-

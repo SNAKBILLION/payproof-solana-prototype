@@ -1,0 +1,11 @@
+id,source,timestamp,amount,counterparty,reference
+ord-101,order,2026-04-03T09:12:00.000Z,4200,Northstar Studio,PP-APR-101
+ord-102,order,2026-04-11T06:30:00.000Z,6800,Saanjh Collective,PP-APR-102
+ord-104,order,2026-04-27T08:45:00.000Z,9100,Northstar Studio,PP-APR-104
+ord-201,order,2026-05-05T08:10:00.000Z,7600,Northstar Studio,PP-MAY-201
+ord-202,order,2026-05-13T07:20:00.000Z,14200,Locale Events,PP-MAY-202
+ord-204,order,2026-05-29T06:30:00.000Z,11800,Field Office Co,PP-MAY-204
+ord-301,order,2026-06-04T09:10:00.000Z,9800,Northstar Studio,PP-JUN-301
+ord-303,order,2026-06-21T07:20:00.000Z,7200,Saanjh Collective,PP-JUN-303
+ord-304,order,2026-06-28T06:10:00.000Z,12600,Field Office Co,PP-JUN-304
+cash-x1,order,2026-06-30T11:10:00.000Z,3500,Walk-in Customer,CASH-NOTE
