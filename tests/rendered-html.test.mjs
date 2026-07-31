@@ -37,7 +37,10 @@ test("server-renders the PayProof workspace and absolute social metadata", async
   assert.match(html, /<title>PayProof \| Invisible Commerce Proof Network<\/title>/i);
   assert.match(html, /Working capital evidence review/);
   assert.match(html, /Turn fragmented transactions into verified commerce/);
-  assert.match(html, /https:\/\/payproof\.example\/og\.png/);
+  assert.match(
+    html,
+    /https:\/\/snakbillion\.github\.io\/payproof-solana-prototype\/og\.png/,
+  );
   assert.doesNotMatch(html, /Income Reliability Score|Run Product Flow|Superteam builders/i);
 });
 
@@ -51,6 +54,7 @@ test("ships the production app without the disposable starter or legacy static s
   assert.match(appSource, /crypto\.subtle\.digest/);
   assert.match(appSource, /MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr/);
   assert.match(appSource, /papaparse/);
+  assert.match(appSource, /NEXT_PUBLIC_BASE_PATH/);
   await assert.rejects(access(new URL("../index.html", import.meta.url)));
   assert.deepEqual(
     await readdir(new URL("../app/_sites-preview", import.meta.url)),

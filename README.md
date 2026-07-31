@@ -25,13 +25,13 @@ credit score or giving a lender access to the merchant's raw financial history.
 
 ## Submission kit
 
-- Live product: https://payproof-network.rohiy1347.chatgpt.site/
+- Live product: https://snakbillion.github.io/payproof-solana-prototype/
 - Sample evidence bundle:
-  https://payproof-network.rohiy1347.chatgpt.site/samples/payproof-pilot-evidence.zip
+  https://snakbillion.github.io/payproof-solana-prototype/samples/payproof-pilot-evidence.zip
 - 90-second product demo:
-  https://payproof-network.rohiy1347.chatgpt.site/downloads/PayProof-90s-Demo.mp4
+  https://snakbillion.github.io/payproof-solana-prototype/downloads/PayProof-90s-Demo.mp4
 - Six-slide grant deck:
-  https://payproof-network.rohiy1347.chatgpt.site/downloads/PayProof-Grant-Deck.pptx
+  https://snakbillion.github.io/payproof-solana-prototype/downloads/PayProof-Grant-Deck.pptx
 - Funding applications: [APPLICATION_PACK.md](APPLICATION_PACK.md)
 - Demo narration: [artifacts/DEMO_SCRIPT.md](artifacts/DEMO_SCRIPT.md)
 
