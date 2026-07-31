@@ -1,7 +1,11 @@
+Exit code: 0
+Wall time: 1.2 seconds
+Output:
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
 /node_modules
+/.pnpm-store/
 /.pnp
 .pnp.*
 .yarn/*
