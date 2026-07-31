@@ -201,12 +201,27 @@ button:disabled {
 
 .sidebar-footer {
   display: grid;
+  width: 100%;
   grid-template-columns: 34px 1fr 16px;
   gap: 9px;
   align-items: center;
   margin-top: 14px;
+  border: 0;
   border-top: 1px solid #27302c;
   padding: 16px 4px 0;
+  color: inherit;
+  text-align: left;
+  background: transparent;
+  cursor: pointer;
+  transition: color 160ms ease, background 160ms ease;
+}
+
+.sidebar-footer:hover {
+  color: #73e7a9;
+}
+
+.sidebar-footer:focus-visible {
+  outline-color: rgba(115, 231, 169, 0.5);
 }
 
 .merchant-avatar {
@@ -285,6 +300,18 @@ button:disabled {
   font-size: 11px;
   font-weight: 650;
   white-space: nowrap;
+}
+
+.wallet-button {
+  border: 1px solid #b7c4bc;
+  color: #23342b;
+  background: #f8fbf9;
+}
+
+.wallet-button.connected {
+  border-color: #82cfa4;
+  color: #075d36;
+  background: var(--green-soft);
 }
 
 .network-pill i,
@@ -1558,6 +1585,128 @@ button:disabled {
   font-size: 25px;
 }
 
+.merchant-modal {
+  width: min(100%, 560px);
+}
+
+.merchant-profile-head {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 14px;
+  align-items: start;
+  margin: 20px 0;
+  border: 1px solid #cfe0d6;
+  border-radius: 7px;
+  padding: 16px;
+  background: #f5faf7;
+}
+
+.merchant-avatar.large {
+  width: 48px;
+  height: 48px;
+  font-size: 14px;
+}
+
+.sample-badge {
+  display: inline-flex;
+  min-height: 24px;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0 9px;
+  color: #075d36;
+  background: #dff5e8;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.merchant-profile-head p {
+  margin: 8px 0 0;
+  color: #5d6b64;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.merchant-context-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  overflow: hidden;
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--line);
+}
+
+.merchant-context-grid > div {
+  padding: 13px;
+  background: white;
+}
+
+.merchant-context-grid dt,
+.merchant-wallet-row span {
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.merchant-context-grid dd {
+  margin: 5px 0 0;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.merchant-wallet-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 14px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 13px;
+}
+
+.merchant-wallet-row span,
+.merchant-wallet-row strong {
+  display: block;
+}
+
+.merchant-wallet-row strong {
+  margin-top: 4px;
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+}
+
+.wallet-toast {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 120;
+  display: grid;
+  width: min(420px, calc(100vw - 40px));
+  grid-template-columns: 20px minmax(0, 1fr) 28px;
+  gap: 10px;
+  align-items: center;
+  border: 1px solid #91c9aa;
+  border-radius: 7px;
+  padding: 13px;
+  color: #16462e;
+  background: #effaf3;
+  box-shadow: 0 16px 44px rgba(15, 52, 31, 0.18);
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.wallet-toast button {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border: 0;
+  color: #315a44;
+  background: transparent;
+  cursor: pointer;
+}
+
 .privacy-notice {
   display: flex;
   gap: 11px;
@@ -1749,11 +1898,25 @@ button:disabled {
 
   .top-actions {
     width: 100%;
+    flex-wrap: wrap;
     overflow-x: auto;
   }
 
   .network-pill {
     display: none;
+  }
+
+  .wallet-button {
+    flex: 1 1 auto;
+  }
+
+  .merchant-context-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .merchant-wallet-row {
+    align-items: stretch;
+    flex-direction: column;
   }
 
   .page-content {

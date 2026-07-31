@@ -345,6 +345,7 @@ export function PayProofApp() {
   const [records, setRecords] = useState<EvidenceRecord[]>([]);
   const [query, setQuery] = useState("");
   const [importOpen, setImportOpen] = useState(false);
+  const [merchantOpen, setMerchantOpen] = useState(false);
   const [sourceHint, setSourceHint] = useState<SourceType>("bank");
   const [importMessage, setImportMessage] = useState("");
   const [consentDays, setConsentDays] = useState(7);
@@ -357,6 +358,7 @@ export function PayProofApp() {
   const [transaction, setTransaction] = useState("");
   const [proofBusy, setProofBusy] = useState(false);
   const [proofMessage, setProofMessage] = useState("Generate a private credential commitment.");
+  const [walletNotice, setWalletNotice] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
 
   const events = useMemo(() => reconcileEvidence(records), [records]);
@@ -464,7 +466,9 @@ export function PayProofApp() {
   async function connectWallet() {
     const provider = getProvider();
     if (!provider) {
-      setProofMessage("No Solana wallet detected. Unlock Solflare or Phantom and refresh.");
+      const message = "No Solana wallet detected. Unlock Solflare or Phantom, then refresh this page.";
+      setProofMessage(message);
+      setWalletNotice(message);
       return null;
     }
     try {
@@ -472,10 +476,14 @@ export function PayProofApp() {
       const publicKey = response.publicKey ?? provider.publicKey;
       const address = publicKey?.toString() ?? "";
       setWalletAddress(address);
-      setProofMessage("Wallet connected. The commitment can now be anchored on devnet.");
+      const message = "Solana wallet connected. Open Proof passport when you are ready to anchor.";
+      setProofMessage(message);
+      setWalletNotice(message);
       return provider;
     } catch (error) {
-      setProofMessage(`Wallet connection cancelled: ${(error as Error).message}`);
+      const message = `Wallet connection cancelled: ${(error as Error).message}`;
+      setProofMessage(message);
+      setWalletNotice(message);
       return null;
     }
   }
@@ -575,14 +583,19 @@ export function PayProofApp() {
           </div>
         </div>
 
-        <div className="sidebar-footer">
+        <button
+          className="sidebar-footer"
+          type="button"
+          onClick={() => setMerchantOpen(true)}
+          aria-label="Open sample merchant profile"
+        >
           <div className="merchant-avatar">AH</div>
           <div>
             <strong>Asha Home Foods</strong>
-            <span>Udyam verified pilot</span>
+            <span>Sample merchant · PP-2048</span>
           </div>
           <ChevronRight size={16} />
-        </div>
+        </button>
       </aside>
 
       <main className="workspace">
@@ -593,6 +606,15 @@ export function PayProofApp() {
           </div>
           <div className="top-actions">
             <span className="network-pill"><i /> Solana devnet</span>
+            <button
+              className={walletAddress ? "button wallet-button connected" : "button wallet-button"}
+              type="button"
+              onClick={() => walletAddress ? setView("credential") : void connectWallet()}
+              title={walletAddress ? "Open wallet proof controls" : "Connect Solflare or Phantom"}
+            >
+              <WalletCards size={17} />
+              {walletAddress ? shortHash(walletAddress) : "Connect wallet"}
+            </button>
             <button className="icon-button" type="button" title="Reset case" onClick={clearCase}>
               <RefreshCw size={17} />
             </button>
@@ -1076,6 +1098,91 @@ export function PayProofApp() {
               <button className="button primary" type="button" onClick={() => setImportOpen(false)}>Done</button>
             </div>
           </section>
+        </div>
+      )}
+
+      {merchantOpen && (
+        <div className="modal-backdrop" role="presentation" onMouseDown={() => setMerchantOpen(false)}>
+          <section
+            className="import-modal merchant-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="merchant-title"
+            onMouseDown={(event) => event.stopPropagation()}
+          >
+            <header>
+              <div>
+                <span className="eyebrow">Current case identity</span>
+                <h2 id="merchant-title">Asha Home Foods</h2>
+              </div>
+              <button className="icon-button" type="button" onClick={() => setMerchantOpen(false)} title="Close merchant profile">
+                <X size={18} />
+              </button>
+            </header>
+            <div className="merchant-profile-head">
+              <div className="merchant-avatar large">AH</div>
+              <div>
+                <span className="sample-badge">Sample merchant</span>
+                <p>
+                  Fictional home-food business used to demonstrate PayProof safely.
+                  No real merchant identity or Udyam verification is being claimed.
+                </p>
+              </div>
+            </div>
+            <dl className="merchant-context-grid">
+              <div><dt>Case ID</dt><dd>PP-2048</dd></div>
+              <div><dt>Use case</dt><dd>Working capital review</dd></div>
+              <div><dt>Evidence</dt><dd>{records.length ? `${records.length} local records` : "Not loaded"}</dd></div>
+              <div><dt>Network</dt><dd>Solana devnet</dd></div>
+            </dl>
+            <div className="merchant-wallet-row">
+              <div>
+                <span>Issuer wallet</span>
+                <strong>{walletAddress ? shortHash(walletAddress) : "Not connected"}</strong>
+              </div>
+              <button
+                className="button outline"
+                type="button"
+                onClick={() => walletAddress ? setView("credential") : void connectWallet()}
+              >
+                <WalletCards size={17} />
+                {walletAddress ? "Open proof controls" : "Connect wallet"}
+              </button>
+            </div>
+            <div className="modal-footer">
+              <button
+                className="button subtle"
+                type="button"
+                onClick={() => {
+                  clearCase();
+                  setMerchantOpen(false);
+                }}
+              >
+                Reset case
+              </button>
+              <button
+                className="button primary"
+                type="button"
+                onClick={() => {
+                  if (!records.length) loadSample();
+                  setView("workbench");
+                  setMerchantOpen(false);
+                }}
+              >
+                <Network size={17} /> Open evidence
+              </button>
+            </div>
+          </section>
+        </div>
+      )}
+
+      {walletNotice && (
+        <div className="wallet-toast" role="status">
+          <WalletCards size={18} />
+          <span>{walletNotice}</span>
+          <button type="button" onClick={() => setWalletNotice("")} title="Dismiss wallet message">
+            <X size={16} />
+          </button>
         </div>
       )}
     </div>
