@@ -325,6 +325,974 @@ function parseRows(rows: Record<string, unknown>[], sourceHint: SourceType): Evi
       return {
         id: String(row.id ?? `import-${Date.now()}-${index}`),
         source,
-        timestamp: newó¯5¶‰žËkºwµçJ
-äÌÕ¬ˆ€è€‰9½Ðµ•Ðˆ¤€è€‰9½ÐÍ¡…É•‰ôð½ÍÑÉ½¹œø(€€€€€€€€€€€€€€€€€€ð½‘¥Øø(€€€€€€€€€€€€€€€€€€ñ‘¥Øø(€€€€€€€€€€€€€€€€€€€€ñÍÁ…¸ùMÑ…‰¥±¥ÑäÁÉ•‘¥…Ñ”ð½ÍÁ…¸ø(€€€€€€€€€€€€€€€€€€€€ñÍÑÉ½¹œùíÍ¡…É•MÑ…‰¥±¥Ñä€ü€¡µ•ÑÉ¥Ì¹Ù½±…Ñ¥±¥Ñä€ðô€À¸ÌÔ€ü€‰A½±¥äµ•Ðˆ€è€‰I•Ù¥•Üˆ¤€è€‰9½ÐÍ¡…É•‰ôð½ÍÑÉ½¹œø(€€€€€€€€€€€€€€€€€€ð½‘¥Øø(€€€€€€€€€€€€€€€€€€ñ‘¥Øø(€€€€€€€€€€€€€€€€€€€€ñÍÁ…¸ù=‰Í•ÉÙ•¡¥ÍÑ½Éäð½ÍÁ…¸ø(€€€€€€€€€€€€€€€€€€€€ñÍÑÉ½¹œùíµ•ÑÉ¥Ì¹µ½¹Ñ¡Íôµ½¹Ñ¡Ìð½ÍÑÉ½¹œø(€€€€€€€€€€€€€€€€€€ð½‘¥Øø(€€€€€€€€€€€€€€€€€€ñ‘¥Øø(€€€€€€€€€€€€€€€€€€€€ñÍÁ…¸ùáÁ¥É•Ìð½ÍÁ…¸ø(€€€€€€€€€€€€€€€€€€€€ñÍÑÉ½¹œùí½¹Í•¹Ñ…åÍô‘…åÌð½ÍÑÉ½¹œø(€€€€€€€€€€€€€€€€€€ð½‘¥Øø(€€€€€€€€€€€€€€€€ð½‘¥Øø(€€€€€€€€€€€€€€€€ñ‘¥Ø±…ÍÍ9…µ”ô‰½µµ¥Ñµ•¹Ðµ‰±½¬ˆø(€€€€€€€€€€€€€€€€€€ñ‘¥ØøñÍÁ…¸ùÙ¥‘•¹”É½½Ðð½ÍÁ…¸øñ½‘”ùíÍ¡½ÉÑ!…Í ¡É½½Ð¥ôð½½‘”øð½‘¥Øø(€€€€€€€€€€€€€€€€€€ñ‘¥ØøñÍÁ…¸ùÉ•‘•¹Ñ¥…°½µµ¥Ñµ•¹Ðð½ÍÁ…¸øñ½‘”ùíÍ¡½ÉÑ!…Í ¡½µµ¥Ñµ•¹Ð¥ôð½½‘”øð½‘¥Øø(€€€€€€€€€€€€€€€€ð½‘¥Øø(€€€€€€€€€€€€€€€€ñ‘¥Ø±…ÍÍ9…µ”ô‰Á…ÍÍÁ½ÉÐµ™½½Ñ•Èˆø(€€€€€€€€€€€€€€€€€€ñÍÁ…¸øñ1½­-•å¡½±”Í¥é”õìÄÑô€¼øI…Ü•Ù¥‘•¹”•á±Õ‘•ð½ÍÁ…¸ø(€€€€€€€€€€€€€€€€€€ñÍÁ…¸øñ…Ñ…‰…Í”Í¥é”õìÄÑô€¼øM¡•µ„ØÈð½ÍÁ…¸ø(€€€€€€€€€€€€€€€€€€ñÍÁ…¸øñUÍ•ÉI½Õ¹‘¡•¬Í¥é”õìÄÑô€¼ø!Õµ…¸É•Ù¥•Üð½ÍÁ…¸ø(€€€€€€€€€€€€€€€€ð½‘¥Øø(€€€€€€€€€€€€€€ð½Í•Ñ¥½¸ø((€€€€€€€€€€€€€€ñÍ•Ñ¥½¸±…ÍÍ9…µ”ô‰Á…¹•°¡…¥¸µÁ…¹•°ˆø(€€€€€€€€€€€€€€€€ñ‘¥Ø±…ÍÍ9…µ”ô‰Á…¹•°µ¡•…‘•Èˆø(€€€€€€€€€€€€€€€€€€ñ‘¥Øø(€€€€€€€€€€€€€€€€€€€€ñÍÁ…¸±…ÍÍ9…µ”ô‰Á…¹•°µ­¥­•ÈˆùQÉÕÍÐÉ…¥°ð½ÍÁ…¸ø(€€€€€€€€€€€€€€€€€€€€ñ ÌùM½±…¹„ÁÉ½½˜½µµ¥Ñµ•¹Ðð½ Ìø(€€€€€€€€€€€€€€€€€€ð½‘¥Øø(€€€€€€€€€€€€€€€€€€ñÍÁ…¸±…ÍÍ9…µ”õíÑÉ…¹Í…Ñ¥½¸€ü€‰¡…¥¸µ±¥Ù”½¹™¥Éµ•ˆ€è€‰¡…¥¸µ±¥Ù”‰ôøñ¤€¼øíÑÉ…¹Í…Ñ¥½¸€ü€‰½¹™¥Éµ•ˆ€è€‰•Ù¹•Ð‰ôð½ÍÁ…¸ø(€€€€€€€€€€€€€€€€ð½‘¥Øø(€€€€€€€€€€€€€€€€ñ‘¥Ø±…ÍÍ9…µ”ô‰¡…¥¸µÍÑ•ÁÌˆø(€€€€€€€€€€€€€€€€€€ñ¡…¥¹MÑ•À‘½¹”õí	½½±•…¸¡½µµ¥Ñµ•¹Ð¥ô¥½¸õí¥±•¡•¬Éô±…‰•°ô‰É•‘•¹Ñ¥…°½µµ¥Ñµ•¹ÐˆÙ…±Õ”õí½µµ¥Ñµ•¹Ð€üÍ¡½ÉÑ!…Í ¡½µµ¥Ñµ•¹Ð¤€è€‰•¹•É…Ñ”™¥ÉÍÐ‰ô€¼ø(€€€€€€€€€€€€€€€€€€ñ¡…¥¹MÑ•À‘½¹”õí	½½±•…¸¡Ý…±±•Ñ‘‘É•ÍÌ¥ô¥½¸õí]…±±•Ñ…É‘Íô±…‰•°ô‰%ÍÍÕ•ÈÝ…±±•ÐˆÙ…±Õ”õíÝ…±±•Ñ‘‘É•ÍÌ€üÍ¡½ÉÑ!…Í ¡Ý…±±•Ñ‘‘É•ÍÌ¤€è€‰9½Ð½¹¹•Ñ•‰ô€¼ø(€€€€€€€€€€€€€€€€€€ñ¡…¥¹MÑ•À‘½¹”õí	½½±•…¸¡ÑÉ…¹Í…Ñ¥½¸¥ô¥½¸õí	…‘•¡•­ô±…‰•°ô‰=¸µ¡…¥¸É••¥ÁÐˆÙ…±Õ”õíÑÉ…¹Í…Ñ¥½¸€üÍ¡½ÉÑ!…Í ¡ÑÉ…¹Í…Ñ¥½¸¤€è€‰9½Ð…¹¡½É•‰ô€¼ø(€€€€€€€€€€€€€€€€ð½‘¥Øø(€€€€€€€€€€€€€€€€ñÀ±…ÍÍ9…µ”ô‰ÁÉ½½˜µµ•ÍÍ…”ˆùíÁÉ½½™5•ÍÍ…•ôð½Àø(€€€€€€€€€€€€€€€ì…Ý…±±•Ñ‘‘É•ÍÌ€ü€ (€€€€€€€€€€€€€€€€€€ñ‰ÕÑÑ½¸±…ÍÍ9…µ”ô‰‰ÕÑÑ½¸½ÕÑ±¥¹”™Õ±°ˆÑåÁ”ô‰‰ÕÑÑ½¸ˆ½¹±¥¬õí½¹¹•Ñ]…±±•Ñôø(€€€€€€€€€€€€€€€€€€€€ñ]…±±•Ñ…É‘ÌÍ¥é”õìÄÝô€¼ø½¹¹•ÐM½±…¹„Ý…±±•Ð(€€€€€€€€€€€€€€€€€€ð½‰ÕÑÑ½¸ø(€€€€€€€€€€€€€€€€¤€è€ (€€€€€€€€€€€€€€€€€€ñ‰ÕÑÑ½¸±…ÍÍ9…µ”ô‰‰ÕÑÑ½¸ÁÉ¥µ…Éä™Õ±°ˆÑåÁ”ô‰‰ÕÑÑ½¸ˆ½¹±¥¬õí…¹¡½É½µµ¥Ñµ•¹Ñô‘¥Í…‰±•õíÁÉ½½™	ÕÍåôø(€€€€€€€€€€€€€€€€€€€íÁÉ½½™	ÕÍä€ü€ñI•™É•Í¡Ü±…ÍÍ9…µ”ô‰ÍÁ¥¸ˆÍ¥é”õìÄÝô€¼ø€è€ñ-•åI½Õ¹Í¥é”õìÄÝô€¼ùô(€€€€€€€€€€€€€€€€€€€¹¡½ÈÁÉ½½˜½¸‘•Ù¹•Ð(€€€€€€€€€€€€€€€€€€ð½‰ÕÑÑ½¸ø(€€€€€€€€€€€€€€€€¥ô(€€€€€€€€€€€€€€€íÑÉ…¹Í…Ñ¥½¸€˜˜€ (€€€€€€€€€€€€€€€€€€ñ„±…ÍÍ9…µ”ô‰•áÁ±½É•Èµ±¥¹¬ˆ¡É•˜õí¡ÑÑÁÌè¼½•áÁ±½É•È¹Í½±…¹„¹½´½Ñà¼‘íÑÉ…¹Í…Ñ¥½¹ôý±ÕÍÑ•Èõ‘•Ù¹•ÑôÑ…É•Ðô‰}‰±…¹¬ˆÉ•°ô‰¹½É•™•ÉÉ•Èˆø(€€€€€€€€€€€€€€€€€€€=Á•¸M½±…¹„É••¥ÁÐ€ñÉÉ½ÝUÁI¥¡ÐÍ¥é”õìÄÕô€¼ø(€€€€€€€€€€€€€€€€€€ð½„ø(€€€€€€€€€€€€€€€€¥ô(€€€€€€€€€€€€€€ð½Í•Ñ¥½¸ø(€€€€€€€€€€€€ð½‘¥Øø(€€€€€€€€€€ð½Í•Ñ¥½¸ø(€€€€€€€€¥ô((€€€€€€€íÙ¥•Ü€ôôô€‰Ù•É¥™¥•Èˆ€˜˜€ (€€€€€€€€€€ñÍ•Ñ¥½¸±…ÍÍ9…µ”ô‰Á…”µ½¹Ñ•¹ÐÙ•É¥™¥•ÈµÁ…”ˆø(€€€€€€€€€€€€ñ‘¥Ø±…ÍÍ9…µ”ô‰Ù•É¥™¥•ÈµÑ½½±‰…Èˆø(€€€€€€€€€€€€€€ñ‘¥Øø(€€€€€€€€€€€€€€€€ñÍÁ…¸±…ÍÍ9…µ”ô‰•å•‰É½ÜˆùáÑ•É¹…°Ù•É¥™¥•ÈÁÉ•Ù¥•Üð½ÍÁ…¸ø(€€€€€€€€€€€€€€€€ñ Èù1•¹‘•ÈÍ••ÌÑ¡”‘•¥Í¥½¸•Ù¥‘•¹”°¹½ÐÑ¡”‘½Õµ•¹ÑÌ¸ð½ Èø(€€€€€€€€€€€€€€ð½‘¥Øø(€€€€€€€€€€€€€€ñÍÁ…¸±…ÍÍ9…µ”ô‰…•ÍÌµÁ¥±°ˆøñ1½­-•å¡½±”Í¥é”õìÄÕô€¼ø•ÍÌ•áÁ¥É•Ì¥¸í½¹Í•¹Ñ…åÍô‘…åÌð½ÍÁ…¸ø(€€€€€€€€€€€€ð½‘¥Øø((€€€€€€€€€€€€ñÍ•Ñ¥½¸±…ÍÍ9…µ”ô‰Ù•É¥™¥…Ñ¥½¸µÍ¡••Ðˆø(€€€€€€€€€€€€€€ñ¡•…‘•Èø(€€€€€€€€€€€€€€€€ñ‘¥Ø±…ÍÍ9…µ”ô‰Ù•É¥™äµ‰É…¹ˆø(€€€€€€€€€€€€€€€€€€ñÍÁ…¸±…ÍÍ9…µ”ô‰‰É…¹µÍåµ‰½°ˆù@ð½ÍÁ…¸ø(€€€€€€€€€€€€€€€€€€ñ‘¥ØøñÍÑÉ½¹œùA…åAÉ½½˜Y•É¥™äð½ÍÑÉ½¹œøñÍµ…±°ùÉåÁÑ½É…Á¡¥Œ½µµ•É”•Ù¥‘•¹”ð½Íµ…±°øð½‘¥Øø(€€€€€€€€€€€€€€€€ð½‘¥Øø(€€€€€€€€€€€€€€€€ñÍÁ…¸±…ÍÍ9…µ”õí½µµ¥Ñµ•¹Ð€ü€‰Ù•É¥™¥•µÁ¥±°É•…‘äˆ€è€‰Ù•É¥™¥•µÁ¥±°‰ôø(€€€€€€€€€€€€€€€€€í½µµ¥Ñµ•¹Ð€ü€ñ	…‘•¡•¬Í¥é”õìÄÙô€¼ø€è€ñ¥É±•±•ÉÐÍ¥é”õìÄÙô€¼ùô(€€€€€€€€€€€€€€€€€í½µµ¥Ñµ•¹Ð€ü€‰É•‘•¹Ñ¥…°Ù…±¥ˆ€è€‰É•‘•¹Ñ¥…°Á•¹‘¥¹œ‰ô(€€€€€€€€€€€€€€€€ð½ÍÁ…¸ø(€€€€€€€€€€€€€€ð½¡•…‘•Èø(€€€€€€€€€€€€€€ñ‘¥Ø±…ÍÍ9…µ”ô‰Ù•É¥™äµ¡•É¼ˆø(€€€€€€€€€€€€€€€€ñ‘¥Øø(€€€€€€€€€€€€€€€€€€ñÍÁ…¸±…ÍÍ9…µ”ô‰Á…¹•°µ­¥­•Èˆù5•É¡…¹Ð±…¥´ð½ÍÁ…¸ø(€€€€€€€€€€€€€€€€€€ñ Ìùí‘•¥Í¥½¹ôð½ Ìø(€€€€€€€€€€€€€€€€€€ñÀù½ÈÝ½É­¥¹œµ…Á¥Ñ…°µ…¹Õ…°É•Ù¥•Ü¸Q¡¥Ì¥Ì¹½Ð„±½…¸…ÁÁÉ½Ù…°½È‰ÕÉ•…ÔÍ½É”¸ð½Àø(€€€€€€€€€€€€€€€€ð½‘¥Øø(€€€€€€€€€€€€€€€€ñ‘¥Ø±…ÍÍ9…µ”ô‰Ù•É¥™äµÍ½É”ˆø(€€€€€€€€€€€€€€€€€€ñÍÑÉ½¹œùíÁ…ÍÍ½Õ¹Ñô½íÁ½±¥ä¹±•¹Ñ¡ôð½ÍÑÉ½¹œø(€€€€€€€€€€€€€€€€€€ñÍÁ…¸ùÁ½±¥ä¡•­Ìµ•Ðð½ÍÁ…¸ø(€€€€€€€€€€€€€€€€ð½‘¥Øø(€€€€€€€€€€€€€€ð½‘¥Øø(€€€€€€€€€€€€€€ñ‘¥Ø±…ÍÍ9…µ”ô‰Ù•É¥™äµ±…¥µÌˆø(€€€€€€€€€€€€€€€íÍ¡…É•I•Ù•¹Õ”€˜˜€ñY•É¥™¥•É±…¥´¥½¸õí	…¹­¹½Ñ•ô±…‰•°ô‰I•Ù•¹Õ”Ñ¡É•Í¡½±ˆÙ…±Õ”õíµ•ÑÉ¥Ì¹…Ù•É…•5½¹Ñ¡±ä€øô€ÌÔÀÀÀ€ü€‰‰½Ù”ƒŠ
-äÌÔ°ÀÀÀ€¼µ½¹Ñ ˆ€è€‰Q¡É•Í¡½±¹½Ðµ•Ð‰ô€¼ùô(€€€€€€€€€€€€€€€íÍ¡…É•MÑ…‰¥±¥Ñä€˜˜€ñY•É¥™¥•É±…¥´¥½¸õíÑ¥Ù¥Ñåô±…‰•°ô‰I•Ù•¹Õ”ÍÑ…‰¥±¥ÑäˆÙ…±Õ”õíµ•ÑÉ¥Ì¹Ù½±…Ñ¥±¥Ñä€ðô€À¸ÌÔ€ü€‰A½±¥ä½¹‘¥Ñ¥½¸µ•Ðˆ€è€‰5…¹Õ…°É•Ù¥•ÜÉ•ÅÕ¥É•‰ô€¼ùô(€€€€€€€€€€€€€€€íÍ¡…É•M½ÕÉ•Ì€˜˜€ñY•É¥™¥•É±…¥´¥½¸õí¥Ñ5•É•ô±…‰•°ô‰%¹‘•Á•¹‘•¹ÐÍ½ÕÉ•ÌˆÙ…±Õ”õí€‘íµ•ÑÉ¥Ì¹Í½ÕÉ•Íô•Ù¥‘•¹”ÑåÁ•Íô€¼ùô(€€€€€€€€€€€€€€€€ñY•É¥™¥•É±…¥´¥½¸õíM¡¥•±‘¡•­ô±…‰•°ô‰Ù¥‘•¹”½¹™¥‘•¹”ˆÙ…±Õ”õí€‘íµ•ÑÉ¥Ì¹½¹™¥‘•¹•ô•ô€¼ø(€€€€€€€€€€€€€€ð½‘¥Øø(€€€€€€€€€€€€€€ñ‘¥Ø±…ÍÍ9…µ”ô‰Ù•É¥™äµ…Õ‘¥Ðˆø(€€€€€€€€€€€€€€€€ñ‘¥Øø(€€€€€€€€€€€€€€€€€€ñÍÁ…¸ùÙ¥‘•¹”½µµ¥Ñµ•¹Ðð½ÍÁ…¸ø(€€€€€€€€€€€€€€€€€€ñ½‘”ùí½µµ¥Ñµ•¹Ðñð€‰É•‘•¹Ñ¥…°¡…Ì¹½Ð‰••¸•¹•É…Ñ•‰ôð½½‘”ø(€€€€€€€€€€€€€€€€ð½‘¥Øø(€€€€€€€€€€€€€€€€ñ‘¥Øø(€€€€€€€€€€€€€€€€€€ñÍÁ…¸ùM½±…¹„É••¥ÁÐð½ÍÁ…¸ø(€€€€€€€€€€€€€€€€€€ñ½‘”ùíÑÉ…¹Í…Ñ¥½¸ñð€‰Ý…¥Ñ¥¹œ½¸µ¡…¥¸…¹¡½È‰ôð½½‘”ø(€€€€€€€€€€€€€€€€ð½‘¥Øø(€€€€€€€€€€€€€€€€ñ‘¥Øø(€€€€€€€€€€€€€€€€€€ñÍÁ…¸ùI…Ü‘½Õµ•¹ÑÌð½ÍÁ…¸ø(€€€€€€€€€€€€€€€€€€ñÍÑÉ½¹œùU¹…Ù…¥±…‰±”‰ä‘•Í¥¸ð½ÍÑÉ½¹œø(€€€€€€€€€€€€€€€€ð½‘¥Øø(€€€€€€€€€€€€€€ð½‘¥Øø(€€€€€€€€€€€€€€ñ™½½Ñ•Èø(€€€€€€€€€€€€€€€€ñÍÁ…¸øñM¡¥•±‘¡•¬Í¥é”õìÄÕô€¼ø%ÍÍÕ•ÈÍ¥¹…ÑÕÉ”¡•­•ð½ÍÁ…¸ø(€€€€€€€€€€€€€€€€ñÍÁ…¸øñ¥±•¡•¬ÈÍ¥é”õìÄÕô€¼øA½±¥äÉ••¥ÁÐÉ•Á±…å…‰±”ð½ÍÁ…¸ø(€€€€€€€€€€€€€€€€ñÍÁ…¸øñ1½­-•å¡½±”Í¥é”õìÄÕô€¼øAÕÉÁ½Í”µ‰½Õ¹…•ÍÌð½ÍÁ…¸ø(€€€€€€€€€€€€€€ð½™½½Ñ•Èø(€€€€€€€€€€€€ð½Í•Ñ¥½¸ø(€€€€€€€€€€ð½Í•Ñ¥½¸ø(€€€€€€€€¥ô(€€€€€€ð½µ…¥¸ø((€€€€€í¥µÁ½ÉÑ=Á•¸€˜˜€ (€€€€€€€€ñ‘¥Ø±…ÍÍ9…µ”ô‰µ½‘…°µ‰…­‘É½ÀˆÉ½±”ô‰ÁÉ•Í•¹Ñ…Ñ¥½¸ˆ½¹5½ÕÍ•½Ý¸õì ¤€ôøÍ•Ñ%µÁ½ÉÑ=Á•¸¡™…±Í”¥ôø(€€€€€€€€€€ñÍ•Ñ¥½¸±…ÍÍ9…µ”ô‰¥µÁ½ÉÐµµ½‘…°ˆÉ½±”ô‰‘¥…±½œˆ…É¥„µµ½‘…°ô‰ÑÉÕ”ˆ…É¥„µ±…‰•±±•‘‰äô‰¥µÁ½ÉÐµÑ¥Ñ±”ˆ½¹5½ÕÍ•½Ý¸õì¡•Ù•¹Ð¤€ôø•Ù•¹Ð¹ÍÑ½ÁAÉ½Á……Ñ¥½¸ ¥ôø(€€€€€€€€€€€€ñ¡•…‘•Èø(€€€€€€€€€€€€€€ñ‘¥Øø(€€€€€€€€€€€€€€€€ñÍÁ…¸±…ÍÍ9…µ”ô‰•å•‰É½ÜˆùAÉ¥Ù…Ñ”•Ù¥‘•¹”¥µÁ½ÉÐð½ÍÁ…¸ø(€€€€€€€€€€€€€€€€ñ È¥ô‰¥µÁ½ÉÐµÑ¥Ñ±”ˆù‘½µµ•É”É•½É‘Ìð½ Èø(€€€€€€€€€€€€€€ð½‘¥Øø(€€€€€€€€€€€€€€ñ‰ÕÑÑ½¸±…ÍÍ9…µ”ô‰¥½¸µ‰ÕÑÑ½¸ˆÑåÁ”ô‰‰ÕÑÑ½¸ˆ½¹±¥¬õì ¤€ôøÍ•Ñ%µÁ½ÉÑ=Á•¸¡™…±Í”¥ôÑ¥Ñ±”ô‰±½Í”¥µÁ½ÉÐˆø(€€€€€€€€€€€€€€€€ñ`Í¥é”õìÄáô€¼ø(€€€€€€€€€€€€€€ð½‰ÕÑÑ½¸ø(€€€€€€€€€€€€ð½¡•…‘•Èø(€€€€€€€€€€€€ñ‘¥Ø±…ÍÍ9…µ”ô‰ÁÉ¥Ù…äµ¹½Ñ¥”ˆø(€€€€€€€€€€€€€€ñ1½­-•å¡½±”Í¥é”õìÈÁô€¼ø(€€€€€€€€€€€€€€ñ‘¥Øø(€€€€€€€€€€€€€€€€ñÍÑÉ½¹œù1½…°ÁÉ½•ÍÍ¥¹œ¥Ì…Ñ¥Ù”ð½ÍÑÉ½¹œø(€€€€€€€€€€€€€€€€ñÀùe½ÕÈMX½È)M=8¥ÌÁ…ÉÍ•¥¸Ñ¡¥Ì‰É½ÝÍ•È¸Q¡”É…Ü™¥±”¥Ì¹½ÐÍ•¹ÐÑ¼A…åAÉ½½˜¸ð½Àø(€€€€€€€€€€€€€€ð½‘¥Øø(€€€€€€€€€€€€ð½‘¥Øø(€€€€€€€€€€€€ñ±…‰•°±…ÍÍ9…µ”ô‰™¥•±µ±…‰•°ˆ¡Ñµ±½Èô‰Í½ÕÉ”µ¡¥¹Ðˆù•™…Õ±ÐÍ½ÕÉ”ÑåÁ”ð½±…‰•°ø(€€€€€€€€€€€€ñÍ•±•Ð¥ô‰Í½ÕÉ”µ¡¥¹ÐˆÙ…±Õ”õíÍ½ÕÉ•!¥¹Ñô½¹¡…¹”õì¡•Ù•¹Ð¤€ôøÍ•ÑM½ÕÉ•!¥¹Ð¡•Ù•¹Ð¹Ñ…É•Ð¹Ù…±Õ”…ÌM½ÕÉ•QåÁ”¥ôø(€€€€€€€€€€€€€ì¡=‰©•Ð¹­•åÌ¡M=UI}5Q¤…ÌM½ÕÉ•QåÁ•mt¤¹µ…À ¡Í½ÕÉ”¤€ôø€ (€€€€€€€€€€€€€€€€ñ½ÁÑ¥½¸Ù…±Õ”õíÍ½ÕÉ•ô­•äõíÍ½ÕÉ•ôùíM=UI}5QmÍ½ÕÉ•t¹±…‰•±ôð½½ÁÑ¥½¸ø(€€€€€€€€€€€€€€¤¥ô(€€€€€€€€€€€€ð½Í•±•Ðø(€€€€€€€€€€€€ñ‰ÕÑÑ½¸±…ÍÍ9…µ”ô‰‘É½Àµé½¹”ˆÑåÁ”ô‰‰ÕÑÑ½¸ˆ½¹±¥¬õì ¤€ôø¥¹ÁÕÑI•˜¹ÕÉÉ•¹Ðü¹±¥¬ ¥ôø(€€€€€€€€€€€€€€ñUÁ±½…‘±½ÕÍ¥é”õìÈáô€¼ø(€€€€€€€€€€€€€€ñÍÑÉ½¹œù¡½½Í”MX½È)M=8•Ù¥‘•¹”ð½ÍÑÉ½¹œø(€€€€€€€€€€€€€€ñÍÁ…¸ùI•ÅÕ¥É•è‘…Ñ”°…µ½Õ¹Ð…¹½Õ¹Ñ•ÉÁ…ÉÑä¸=ÁÑ¥½¹…°èÉ•™•É•¹”°Í½ÕÉ”…¹¥¸ð½ÍÁ…¸ø(€€€€€€€€€€€€ð½‰ÕÑÑ½¸ø(€€€€€€€€€€€€ñ¥¹ÁÕÐÉ•˜õí¥¹ÁÕÑI•™ô±…ÍÍ9…µ”ô‰¡¥‘‘•¸µ¥¹ÁÕÐˆÑåÁ”ô‰™¥±”ˆµÕ±Ñ¥Á±”…•ÁÐôˆ¹ÍØ°¹©Í½¸±Ñ•áÐ½ÍØ±…ÁÁ±¥…Ñ¥½¸½©Í½¸ˆ½¹¡…¹”õí¥µÁ½ÉÑ¥±•Íô€¼ø(€€€€€€€€€€€í¥µÁ½ÉÑ5•ÍÍ…”€˜˜€ñÀ±…ÍÍ9…µ”ô‰¥µÁ½ÉÐµµ•ÍÍ…”ˆùí¥µÁ½ÉÑ5•ÍÍ…•ôð½Àùô(€€€€€€€€€€€€ñ‘¥Ø±…ÍÍ9…µ”ô‰µ½‘…°µ™½½Ñ•Èˆø(€€€€€€€€€€€€€€ñ„(€€€€€€€€€€€€€€€±…ÍÍ9…µ”ô‰‰ÕÑÑ½¸ÍÕ‰Ñ±”ˆ(€€€€€€€€€€€€€€€¡É•˜õí€‘íÁÕ‰±¥	…Í•A…Ñ¡ô½Í…µÁ±•Ì½Á…åÁÉ½½˜µÁ¥±½Ðµ•Ù¥‘•¹”¹é¥Áô(€€€€€€€€€€€€€€€‘½Ý¹±½…(€€€€€€€€€€€€€€ø(€€€€€€€€€€€€€€€€ñ½Ý¹±½…Í¥é”õìÄÝô€¼ø½Ý¹±½…Í…µÁ±”‰Õ¹‘±”(€€€€€€€€€€€€€€ð½„ø(€€€€€€€€€€€€€€ñ‰ÕÑÑ½¸±…ÍÍ9…µ”ô‰‰ÕÑÑ½¸ÍÕ‰Ñ±”ˆÑåÁ”ô‰‰ÕÑÑ½¸ˆ½¹±¥¬õí±½…‘M…µÁ±•ôøñMÁ…É­±•ÌÍ¥é”õìÄÝô€¼øUÍ”Á¥±½Ð‘…Ñ…Í•Ðð½‰ÕÑÑ½¸ø(€€€€€€€€€€€€€€ñ‰ÕÑÑ½¸±…ÍÍ9…µ”ô‰‰ÕÑÑ½¸ÁÉ¥µ…ÉäˆÑåÁ”ô‰‰ÕÑÑ½¸ˆ½¹±¥¬õì ¤€ôøÍ•Ñ%µÁ½ÉÑ=Á•¸¡™…±Í”¥ôù½¹”ð½‰ÕÑÑ½¸ø(€€€€€€€€€€€€ð½‘¥Øø(€€€€€€€€€€ð½Í•Ñ¥½¸ø(€€€€€€€€ð½‘¥Øø(€€€€€€¥ô((€€€€€íµ•É¡…¹Ñ=Á•¸€˜˜€ (€€€€€€€€ñ‘¥Ø±…ÍÍ9…µ”ô‰µ½‘…°µ‰…­‘É½ÀˆÉ½±”ô‰ÁÉ•Í•¹Ñ…Ñ¥½¸ˆ½¹5½ÕÍ•½Ý¸õì ¤€ôøÍ•Ñ5•É¡…¹Ñ=Á•¸¡™…±Í”¥ôø(€€€€€€€€€€ñÍ•Ñ¥½¸(€€€€€€€€€€€±…ÍÍ9…µ”ô‰¥µÁ½ÉÐµµ½‘…°µ•É¡…¹Ðµµ½‘…°ˆ(€€€€€€€€€€€É½±”ô‰‘¥…±½œˆ(€€€€€€€€€€€…É¥„µµ½‘…°ô‰ÑÉÕ”ˆ(€€€€€€€€€€€…É¥„µ±…‰•±±•‘‰äô‰µ•É¡…¹ÐµÑ¥Ñ±”ˆ(€€€€€€€€€€€½¹5½ÕÍ•½Ý¸õì¡•Ù•¹Ð¤€ôø•Ù•¹Ð¹ÍÑ½ÁAÉ½Á……Ñ¥½¸ ¥ô(€€€€€€€€€€ø(€€€€€€€€€€€€ñ¡•…‘•Èø(€€€€€€€€€€€€€€ñ‘¥Øø(€€€€€€€€€€€€€€€€ñÍÁ…¸±…ÍÍ9…µ”ô‰•å•‰É½ÜˆùÕÉÉ•¹Ð…Í”¥‘•¹Ñ¥Ñäð½ÍÁ…¸ø(€€€€€€€€€€€€€€€€ñ È¥ô‰µ•É¡…¹ÐµÑ¥Ñ±”ˆùÍ¡„!½µ”½½‘Ìð½ Èø(€€€€€€€€€€€€€€ð½‘¥Øø(€€€€€€€€€€€€€€ñ‰ÕÑÑ½¸±…ÍÍ9…µ”ô‰¥½¸µ‰ÕÑÑ½¸ˆÑåÁ”ô‰‰ÕÑÑ½¸ˆ½¹±¥¬õì ¤€ôøÍ•Ñ5•É¡…¹Ñ=Á•¸¡™…±Í”¥ôÑ¥Ñ±”ô‰±½Í”µ•É¡…¹ÐÁÉ½™¥±”ˆø(€€€€€€€€€€€€€€€€ñ`Í¥é”õìÄáô€¼ø(€€€€€€€€€€€€€€ð½‰ÕÑÑ½¸ø(€€€€€€€€€€€€ð½¡•…‘•Èø(€€€€€€€€€€€€ñ‘¥Ø±…ÍÍ9…µ”ô‰µ•É¡…¹ÐµÁÉ½™¥±”µ¡•…ˆø(€€€€€€€€€€€€€€ñ‘¥Ø±…ÍÍ9…µ”ô‰µ•É¡…¹Ðµ…Ù…Ñ…È±…É”ˆù ð½‘¥Øø(€€€€€€€€€€€€€€ñ‘¥Øø(€€€€€€€€€€€€€€€€ñÍÁ…¸±…ÍÍ9…µ”ô‰Í…µÁ±”µ‰…‘”ˆùM…µÁ±”µ•É¡…¹Ðð½ÍÁ…¸ø(€€€€€€€€€€€€€€€€ñÀø(€€€€€€€€€€€€€€€€€¥Ñ¥½¹…°¡½µ”µ™½½‰ÕÍ¥¹•ÍÌÕÍ•Ñ¼‘•µ½¹ÍÑÉ…Ñ”A…åAÉ½½˜Í…™•±ä¸(€€€€€€€€€€€€€€€€€9¼É•…°µ•É¡…¹Ð¥‘•¹Ñ¥Ñä½ÈU‘å…´Ù•É¥™¥…Ñ¥½¸¥Ì‰•¥¹œ±…¥µ•¸(€€€€€€€€€€€€€€€€ð½Àø(€€€€€€€€€€€€€€ð½‘¥Øø(€€€€€€€€€€€€ð½‘¥Øø(€€€€€€€€€€€€ñ‘°±…ÍÍ9…µ”ô‰µ•É¡…¹Ðµ½¹Ñ•áÐµÉ¥ˆø(€€€€€€€€€€€€€€ñ‘¥Øøñ‘Ðù…Í”%ð½‘Ðøñ‘ùA@´ÈÀÐàð½‘øð½‘¥Øø(€€€€€€€€€€€€€€ñ‘¥Øøñ‘ÐùUÍ”…Í”ð½‘Ðøñ‘ù]½É­¥¹œ…Á¥Ñ…°É•Ù¥•Üð½‘øð½‘¥Øø(€€€€€€€€€€€€€€ñ‘¥Øøñ‘ÐùÙ¥‘•¹”ð½‘Ðøñ‘ùíÉ•½É‘Ì¹±•¹Ñ €ü€‘íÉ•½É‘Ì¹±•¹Ñ¡ô±½…°É•½É‘Í€€è€‰9½Ð±½…‘•‰ôð½‘øð½‘¥Øø(€€€€€€€€€€€€€€ñ‘¥Øøñ‘Ðù9•ÑÝ½É¬ð½‘Ðøñ‘ùM½±…¹„‘•Ù¹•Ðð½‘øð½‘¥Øø(€€€€€€€€€€€€ð½‘°ø(€€€€€€€€€€€€ñ‘¥Ø±…ÍÍ9…µ”ô‰µ•É¡…¹ÐµÝ…±±•ÐµÉ½Üˆø(€€€€€€€€€€€€€€ñ‘¥Øø(€€€€€€€€€€€€€€€€ñÍÁ…¸ù%ÍÍÕ•ÈÝ…±±•Ðð½ÍÁ…¸ø(€€€€€€€€€€€€€€€€ñÍÑÉ½¹œùíÝ…±±•Ñ‘‘É•ÍÌ€üÍ¡½ÉÑ!…Í ¡Ý…±±•Ñ‘‘É•ÍÌ¤€è€‰9½Ð½¹¹•Ñ•‰ôð½ÍÑÉ½¹œø(€€€€€€€€€€€€€€ð½‘¥Øø(€€€€€€€€€€€€€€ñ‰ÕÑÑ½¸(€€€€€€€€€€€€€€€±…ÍÍ9…µ”ô‰‰ÕÑÑ½¸½ÕÑ±¥¹”ˆ(€€€€€€€€€€€€€€€ÑåÁ”ô‰‰ÕÑÑ½¸ˆ(€€€€€€€€€€€€€€€½¹±¥¬õì ¤€ôøÝ…±±•Ñ‘‘É•ÍÌ€üÍ•ÑY¥•Ü ‰É•‘•¹Ñ¥…°ˆ¤€èÙ½¥½¹¹•Ñ]…±±•Ð ¥ô(€€€€€€€€€€€€€€ø(€€€€€€€€€€€€€€€€ñ]…±±•Ñ…É‘ÌÍ¥é”õìÄÝô€¼ø(€€€€€€€€€€€€€€€íÝ…±±•Ñ‘‘É•ÍÌ€ü€‰=Á•¸ÁÉ½½˜½¹ÑÉ½±Ìˆ€è€‰½¹¹•ÐÝ…±±•Ð‰ô(€€€€€€€€€€€€€€ð½‰ÕÑÑ½¸ø(€€€€€€€€€€€€ð½‘¥Øø(€€€€€€€€€€€€ñ‘¥Ø±…ÍÍ9…µ”ô‰µ½‘…°µ™½½Ñ•Èˆø(€€€€€€€€€€€€€€ñ‰ÕÑÑ½¸(€€€€€€€€€€€€€€€±…ÍÍ9…µ”ô‰‰ÕÑÑ½¸ÍÕ‰Ñ±”ˆ(€€€€€€€€€€€€€€€ÑåÁ”ô‰‰ÕÑÑ½¸ˆ(€€€€€€€€€€€€€€€½¹±¥¬õì ¤€ôøì(€€€€€€€€€€€€€€€€€±•…É…Í” ¤ì(€€€€€€€€€€€€€€€€€Í•Ñ5•É¡…¹Ñ=Á•¸¡™…±Í”¤ì(€€€€€€€€€€€€€€€õô(€€€€€€€€€€€€€€ø(€€€€€€€€€€€€€€€I•Í•Ð…Í”(€€€€€€€€€€€€€€ð½‰ÕÑÑ½¸ø(€€€€€€€€€€€€€€ñ‰ÕÑÑ½¸(€€€€€€€€€€€€€€€±…ÍÍ9…µ”ô‰‰ÕÑÑ½¸ÁÉ¥µ…Éäˆ(€€€€€€€€€€€€€€€ÑåÁ”ô‰‰ÕÑÑ½¸ˆ(€€€€€€€€€€€€€€€½¹±¥¬õì ¤€ôøì(€€€€€€€€€€€€€€€€€¥˜€ …É•½É‘Ì¹±•¹Ñ ¤±½…‘M…µÁ±” ¤ì(€€€€€€€€€€€€€€€€€Í•ÑY¥•Ü ‰Ý½É­‰•¹ ˆ¤ì(€€€€€€€€€€€€€€€€€Í•Ñ5•É¡…¹Ñ=Á•¸¡™…±Í”¤ì(€€€€€€€€€€€€€€€õô(€€€€€€€€€€€€€€ø(€€€€€€€€€€€€€€€€ñ9•ÑÝ½É¬Í¥é”õìÄÝô€¼ø=Á•¸•Ù¥‘•¹”(€€€€€€€€€€€€€€ð½‰ÕÑÑ½¸ø(€€€€€€€€€€€€ð½‘¥Øø(€€€€€€€€€€ð½Í•Ñ¥½¸ø(€€€€€€€€ð½‘¥Øø(€€€€€€¥ô((€€€€€íÝ…±±•Ñ9½Ñ¥”€˜˜€ (€€€€€€€€ñ‘¥Ø±…ÍÍ9…µ”ô‰Ý…±±•ÐµÑ½…ÍÐˆÉ½±”ô‰ÍÑ…ÑÕÌˆø(€€€€€€€€€€ñ]…±±•Ñ…É‘ÌÍ¥é”õìÄáô€¼ø(€€€€€€€€€€ñÍÁ…¸ùíÝ…±±•Ñ9½Ñ¥•ôð½ÍÁ…¸ø(€€€€€€€€€€ñ‰ÕÑÑ½¸ÑåÁ”ô‰‰ÕÑÑ½¸ˆ½¹±¥¬õì ¤€ôøÍ•Ñ]…±±•Ñ9½Ñ¥” ˆˆ¥ôÑ¥Ñ±”ô‰¥Íµ¥ÍÌÝ…±±•Ðµ•ÍÍ…”ˆø(€€€€€€€€€€€€ñ`Í¥é”õìÄÙô€¼ø(€€€€€€€€€€ð½‰ÕÑÑ½¸ø(€€€€€€€€ð½‘¥Øø(€€€€€€¥ô(€€€€ð½‘¥Øø(€€¤ì)ô()ÑåÁ”]…±±•ÑAÉ½Ù¥‘•È€ôì(€¥ÍM½±™±…É”üè‰½½±•…¸ì(€ÁÕ‰±¥-•äüèìÑ½MÑÉ¥¹œ ¤èÍÑÉ¥¹œôì(€½¹¹•Ð ¤èAÉ½µ¥Í”ñìÁÕ‰±¥-•äüèìÑ½MÑÉ¥¹œ ¤èÍÑÉ¥¹œôôøì(€Í¥¹¹‘M•¹‘QÉ…¹Í…Ñ¥½¸üè€¡ÑÉ…¹Í…Ñ¥½¸èÕ¹­¹½Ý¸¤€ôøAÉ½µ¥Í”ñÍÑÉ¥¹œðìÍ¥¹…ÑÕÉ”èÍÑÉ¥¹œôøì(€Í¥¹QÉ…¹Í…Ñ¥½¸üè€¡ÑÉ…¹Í…Ñ¥½¸èÕ¹­¹½Ý¸¤€ôøAÉ½µ¥Í”ñìÍ•É¥…±¥é” ¤èU¥¹ÐáÉÉ…äôøì)ôì()™Õ¹Ñ¥½¸5•ÑÉ¥Œ¡ì(€¥½¸è%½¸°(€±…‰•°°(€Ù…±Õ”°(€¹½Ñ”°)ôèì(€¥½¸èÑåÁ•½˜	…¹­¹½Ñ”ì(€±…‰•°èÍÑÉ¥¹œì(€Ù…±Õ”èÍÑÉ¥¹œì(€¹½Ñ”èÍÑÉ¥¹œì)ô¤ì(€É•ÑÕÉ¸€ (€€€€ñ…ÉÑ¥±”±…ÍÍ9…µ”ô‰µ•ÑÉ¥Œˆø(€€€€€€ñ‘¥Ø±…ÍÍ9…µ”ô‰µ•ÑÉ¥Œµ¡•…ˆøñÍÁ…¸ùí±…‰•±ôð½ÍÁ…¸øñ%½¸Í¥é”õìÄáô€¼øð½‘¥Øø(€€€€€€ñÍÑÉ½¹œùíÙ…±Õ•ôð½ÍÑÉ½¹œø(€€€€€€ñÍµ…±°ùí¹½Ñ•ôð½Íµ…±°ø(€€€€ð½…ÉÑ¥±”ø(€€¤ì)ô()™Õ¹Ñ¥½¸MÑ…ÑÕÌ¡ìÍÑ…ÑÕÌôèìÍÑ…ÑÕÌèI•Ù•¹Õ•Ù•¹Ñl‰ÍÑ…ÑÕÌ‰tô¤ì(€É•ÑÕÉ¸€ (€€€€ñÍÁ…¸±…ÍÍ9…µ”õíÍÑ…ÑÕÌ€‘íÍÑ…ÑÕÍõôø(€€€€€€ñ¤€¼ø(€€€€€íÍÑ…ÑÕÌ€ôôô€‰Ù•É¥™¥•ˆ€ü€‰Y•É¥™¥•ˆ€èÍÑ…ÑÕÌ€ôôô€‰ÍÕÁÁ½ÉÑ•ˆ€ü€‰MÕÁÁ½ÉÑ•ˆ€è€‰U¹µ…Ñ¡•‰ô(€€€€ð½ÍÁ…¸ø(€€¤ì)ô()™Õ¹Ñ¥½¸µÁÑåMÑ…Ñ”¡ì½¹1½…°½¹%µÁ½ÉÐôèì½¹1½… ¤èÙ½¥ì½¹%µÁ½ÉÐ ¤èÙ½¥ô¤ì(€É•ÑÕÉ¸€ (€€€€ñ‘¥Ø±…ÍÍ9…µ”ô‰•µÁÑäµÍÑ…Ñ”ˆø(€€€€€€ñ‘¥Ø±…ÍÍ9…µ”ô‰•µÁÑäµ¥½¸ˆøñ9•ÑÝ½É¬Í¥é”õìÈáô€¼øð½‘¥Øø(€€€€€€ñ Ìù9¼½µµ•É”É…Á å•Ðð½ Ìø(€€€€€€ñÀù%µÁ½ÉÐÉ•…°É•½É‘Ì½È±½…Ñ¡”Á¥±½Ð…Í”Ñ¼Í•”•Ù¥‘•¹”É•½¹¥±¥…Ñ¥½¸Ý½É­¥¹œ¸ð½Àø(€€€€€€ñ‘¥Øø(€€€€€€€€ñ‰ÕÑÑ½¸±…ÍÍ9…µ”ô‰‰ÕÑÑ½¸ÁÉ¥µ…ÉäˆÑåÁ”ô‰‰ÕÑÑ½¸ˆ½¹±¥¬õí½¹1½…‘ôøñMÁ…É­±•ÌÍ¥é”õìÄÝô€¼ø1½…Á¥±½Ð…Í”ð½‰ÕÑÑ½¸ø(€€€€€€€€ñ‰ÕÑÑ½¸±…ÍÍ9…µ”ô‰‰ÕÑÑ½¸ÍÕ‰Ñ±”ˆÑåÁ”ô‰‰ÕÑÑ½¸ˆ½¹±¥¬õí½¹%µÁ½ÉÑôøñ¥±•UÀÍ¥é”õìÄÝô€¼ø%µÁ½ÉÐ‘…Ñ„ð½‰ÕÑÑ½¸ø(€€€€€€ð½‘¥Øø(€€€€ð½‘¥Øø(€€¤ì)ô()™Õ¹Ñ¥½¸½¹Í•¹ÑQ½±”¡ì(€¡•­•°(€½¹¡…¹”°(€±…‰•°°(€‘•Ñ…¥°°)ôèì(€¡•­•è‰½½±•…¸ì(€½¹¡…¹”¡Ù…±Õ”è‰½½±•…¸¤èÙ½¥ì(€±…‰•°èÍÑÉ¥¹œì(€‘•Ñ…¥°èÍÑÉ¥¹œì)ô¤ì(€É•ÑÕÉ¸€ (€€€€ñ±…‰•°±…ÍÍ9…µ”ô‰½¹Í•¹ÐµÉ½Üˆø(€€€€€€ñÍÁ…¸±…ÍÍ9…µ”õí¡•­•€ü€‰Ñ½±”½¸ˆ€è€‰Ñ½±”‰ôøñ¤€¼øð½ÍÁ…¸ø(€€€€€€ñÍÁ…¸øñÍÑÉ½¹œùí±…‰•±ôð½ÍÑÉ½¹œøñÍµ…±°ùí‘•Ñ…¥±ôð½Íµ…±°øð½ÍÁ…¸ø(€€€€€€ñ¥¹ÁÕÐÑåÁ”ô‰¡•­‰½àˆ¡•­•õí¡•­•‘ô½¹¡…¹”õì¡•Ù•¹Ð¤€ôø½¹¡…¹”¡•Ù•¹Ð¹Ñ…É•Ð¹¡•­•¥ô€¼ø(€€€€ð½±…‰•°ø(€€¤ì)ô()™Õ¹Ñ¥½¸¡…¥¹MÑ•À¡ì(€‘½¹”°(€¥½¸è%½¸°(€±…‰•°°(€Ù…±Õ”°)ôèì(€‘½¹”è‰½½±•…¸ì(€¥½¸èÑåÁ•½˜¥±•¡•¬Èì(€±…‰•°èÍÑÉ¥¹œì(€Ù…±Õ”èÍÑÉ¥¹œì)ô¤ì(€É•ÑÕÉ¸€ (€€€€ñ‘¥Ø±…ÍÍ9…µ”ô‰¡…¥¸µÍÑ•Àˆø(€€€€€€ñÍÁ…¸±…ÍÍ9…µ”õí‘½¹”€ü€‰‘½¹”ˆ€è€ˆ‰ôùí‘½¹”€ü€ñ¡•¬Í¥é”õìÄÙô€¼ø€è€ñ%½¸Í¥é”õìÄÙô€¼ùôð½ÍÁ…¸ø(€€€€€€ñ‘¥ØøñÍÑÉ½¹œùí±…‰•±ôð½ÍÑÉ½¹œøñ½‘”ùíÙ…±Õ•ôð½½‘”øð½‘¥Øø(€€€€ð½‘¥Øø(€€¤ì)ô()™Õ¹Ñ¥½¸Y•É¥™¥•É±…¥´¡ì(€¥½¸è%½¸°(€±…‰•°°(€Ù…±Õ”°)ôèì(€¥½¸èÑåÁ•½˜	…¹­¹½Ñ”ì(€±…‰•°èÍÑÉ¥¹œì(€Ù…±Õ”èÍÑÉ¥¹œì)ô¤ì(€É•ÑÕÉ¸€ (€€€€ñ‘¥Ø±…ÍÍ9…µ”ô‰Ù•É¥™¥•Èµ±…¥´ˆø(€€€€€€ñÍÁ…¸øñ%½¸Í¥é”õìÄáô€¼øð½ÍÁ…¸ø(€€€€€€ñ‘¥ØøñÍµ…±°ùí±…‰•±ôð½Íµ…±°øñÍÑÉ½¹œùíÙ…±Õ•ôð½ÍÑÉ½¹œøð½‘¥Øø(€€€€€€ñ	…‘•¡•¬Í¥é”õìÄáô€¼ø(€€€€ð½‘¥Øø(€€¤ì)ô(
+        timestamp: new Date(timestamp).toISOString(),
+        amount,
+        counterparty,
+        reference,
+        trust: source === "order" || source === "settlement" ? "source-verified" : "document-verified",
+      } satisfies EvidenceRecord;
+    });
+
+  return parsed.filter((record): record is EvidenceRecord => record !== null);
+}
+
+function shortHash(value: string) {
+  return value ? `${value.slice(0, 9)}...${value.slice(-7)}` : "Not generated";
+}
+
+export function PayProofApp() {
+  const [view, setView] = useState<View>("workbench");
+  const [records, setRecords] = useState<EvidenceRecord[]>([]);
+  const [query, setQuery] = useState("");
+  const [importOpen, setImportOpen] = useState(false);
+  const [merchantOpen, setMerchantOpen] = useState(false);
+  const [sourceHint, setSourceHint] = useState<SourceType>("bank");
+  const [importMessage, setImportMessage] = useState("");
+  const [consentDays, setConsentDays] = useState(7);
+  const [shareRevenue, setShareRevenue] = useState(true);
+  const [shareStability, setShareStability] = useState(true);
+  const [shareSources, setShareSources] = useState(false);
+  const [commitment, setCommitment] = useState("");
+  const [root, setRoot] = useState("");
+  const [walletAddress, setWalletAddress] = useState("");
+  const [transaction, setTransaction] = useState("");
+  const [proofBusy, setProofBusy] = useState(false);
+  const [proofMessage, setProofMessage] = useState("Generate a private credential commitment.");
+  const [walletNotice, setWalletNotice] = useState("");
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const events = useMemo(() => reconcileEvidence(records), [records]);
+  const metrics = useMemo(() => computeMetrics(events, records), [events, records]);
+  const policy = useMemo(() => getPolicyChecks(metrics), [metrics]);
+  const passCount = policy.filter((item) => item.pass).length;
+  const decision =
+    records.length === 0
+      ? "Awaiting evidence"
+      : passCount === policy.length
+        ? "Second-look ready"
+        : passCount >= 3
+          ? "Manual review"
+          : "Evidence incomplete";
+  const filteredEvents = events.filter(
+    (event) =>
+      normalizedText(event.counterparty).includes(normalizedText(query)) ||
+      normalizedText(event.sources.join(" ")).includes(normalizedText(query)),
+  );
+
+  function loadSample() {
+    setRecords(SAMPLE_EVIDENCE);
+    setCommitment("");
+    setRoot("");
+    setTransaction("");
+    setProofMessage("Evidence loaded locally. Review the graph before issuing proof.");
+  }
+
+  function clearCase() {
+    setRecords([]);
+    setCommitment("");
+    setRoot("");
+    setWalletAddress("");
+    setTransaction("");
+    setProofMessage("Generate a private credential commitment.");
+  }
+
+  async function importFiles(event: ChangeEvent<HTMLInputElement>) {
+    const files = [...(event.target.files ?? [])];
+    if (!files.length) return;
+    setImportMessage("Reading evidence inside this browser...");
+    const imported: EvidenceRecord[] = [];
+    for (const file of files) {
+      const text = await file.text();
+      if (file.name.toLowerCase().endsWith(".json")) {
+        const json = JSON.parse(text);
+        imported.push(...parseRows(Array.isArray(json) ? json : json.records ?? [], sourceHint));
+      } else {
+        const result = Papa.parse<Record<string, unknown>>(text, {
+          header: true,
+          skipEmptyLines: true,
+          transformHeader: (header) => header.trim().toLowerCase().replace(/\s+/g, "_"),
+        });
+        imported.push(...parseRows(result.data, sourceHint));
+      }
+    }
+    setRecords((current) => [...current, ...imported]);
+    setImportMessage(
+      imported.length
+        ? `${imported.length} records normalized. Raw files were not uploaded.`
+        : "No valid rows found. Add date, amount and counterparty columns.",
+    );
+    event.target.value = "";
+  }
+
+  async function generateCredential() {
+    if (!records.length) {
+      setProofMessage("Add evidence before generating a credential.");
+      return;
+    }
+    setProofBusy(true);
+    setProofMessage("Building evidence Merkle tree and policy receipt...");
+    const evidenceRoot = await merkleRoot(records);
+    const payload = {
+      schema: "payproof.invisible-commerce.v2",
+      subject: "merchant:asha-home-foods",
+      evidenceRoot,
+      policy: "working-capital-second-look.v1",
+      decision,
+      claims: {
+        revenueThreshold: shareRevenue ? metrics.averageMonthly >= 35000 : undefined,
+        stableRevenue: shareStability ? metrics.volatility <= 0.35 : undefined,
+        sourceDiversity: shareSources ? metrics.sources : undefined,
+      },
+      observedMonths: metrics.months,
+      expiresAt: new Date(Date.now() + consentDays * 86400000).toISOString(),
+    };
+    const reportCommitment = await sha256(JSON.stringify(payload));
+    setRoot(evidenceRoot);
+    setCommitment(reportCommitment);
+    setProofMessage("Private commitment ready. Raw evidence is not included.");
+    setProofBusy(false);
+  }
+
+  function getProvider() {
+    const browser = window as typeof window & {
+      solana?: WalletProvider;
+      solflare?: WalletProvider;
+      Solflare?: WalletProvider;
+    };
+    const providers = [browser.solflare, browser.Solflare, browser.solana].filter(Boolean);
+    return providers.find((provider) => provider?.isSolflare) ?? providers[0] ?? null;
+  }
+
+  async function connectWallet() {
+    const provider = getProvider();
+    if (!provider) {
+      const message = "No Solana wallet detected. Unlock Solflare or Phantom, then refresh this page.";
+      setProofMessage(message);
+      setWalletNotice(message);
+      return null;
+    }
+    try {
+      const response = await provider.connect();
+      const publicKey = response.publicKey ?? provider.publicKey;
+      const address = publicKey?.toString() ?? "";
+      setWalletAddress(address);
+      const message = "Solana wallet connected. Open Proof passport when you are ready to anchor.";
+      setProofMessage(message);
+      setWalletNotice(message);
+      return provider;
+    } catch (error) {
+      const message = `Wallet connection cancelled: ${(error as Error).message}`;
+      setProofMessage(message);
+      setWalletNotice(message);
+      return null;
+    }
+  }
+
+  async function anchorCommitment() {
+    if (!commitment) {
+      await generateCredential();
+      setProofMessage("Commitment generated. Review it, then anchor the proof.");
+      return;
+    }
+    const provider = getProvider() ?? (await connectWallet());
+    if (!provider?.publicKey) return;
+    setProofBusy(true);
+    setProofMessage("Preparing Solana devnet proof transaction...");
+    try {
+      // Keep the wallet module outside the server bundle; no private key or RPC secret ships with PayProof.
+      // @ts-expect-error TypeScript does not resolve HTTPS module specifiers.
+      const web3 = await import(/* @vite-ignore */ "https://esm.sh/@solana/web3.js@1.98.2");
+      const connection = new web3.Connection("https://api.devnet.solana.com", "confirmed");
+      const memoProgram = new web3.PublicKey("MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr");
+      const memo = JSON.stringify({
+        protocol: "PayProof",
+        schema: "invisible-commerce.v2",
+        commitment,
+        evidenceRoot: root,
+        expiresInDays: consentDays,
+      });
+      const transactionRequest = new web3.Transaction().add(
+        new web3.TransactionInstruction({
+          keys: [{ pubkey: provider.publicKey, isSigner: true, isWritable: false }],
+          programId: memoProgram,
+          data: new TextEncoder().encode(memo),
+        }),
+      );
+      transactionRequest.feePayer = provider.publicKey;
+      transactionRequest.recentBlockhash = (
+        await connection.getLatestBlockhash("confirmed")
+      ).blockhash;
+      let signature = "";
+      if (provider.signAndSendTransaction) {
+        const result = await provider.signAndSendTransaction(transactionRequest);
+        signature = typeof result === "string" ? result : result.signature;
+      } else if (provider.signTransaction) {
+        const signed = await provider.signTransaction(transactionRequest);
+        signature = await connection.sendRawTransaction(signed.serialize());
+      }
+      if (!signature) throw new Error("Wallet did not return a transaction signature.");
+      await connection.confirmTransaction(signature, "confirmed");
+      setTransaction(signature);
+      setProofMessage("Proof commitment anchored on Solana devnet.");
+    } catch (error) {
+      setProofMessage(`Proof transaction failed: ${(error as Error).message}`);
+    } finally {
+      setProofBusy(false);
+    }
+  }
+
+  return (
+    <div className="product-shell">
+      <aside className="sidebar">
+        <div className="brand-lockup">
+          <span className="brand-symbol">P</span>
+          <span>
+            <strong>PayProof</strong>
+            <small>Invisible commerce network</small>
+          </span>
+        </div>
+
+        <nav className="main-nav" aria-label="PayProof workspace">
+          <p>Workspace</p>
+          {NAV_ITEMS.map((item) => {
+            const Icon = item.icon;
+            return (
+              <button
+                type="button"
+                className={view === item.id ? "nav-item active" : "nav-item"}
+                onClick={() => setView(item.id)}
+                key={item.id}
+              >
+                <Icon size={18} strokeWidth={1.8} />
+                <span>{item.label}</span>
+                {item.id === "policy" && records.length > 0 && (
+                  <b className={passCount === policy.length ? "nav-count pass" : "nav-count"}>
+                    {passCount}/{policy.length}
+                  </b>
+                )}
+              </button>
+            );
+          })}
+        </nav>
+
+        <div className="privacy-box">
+          <LockKeyhole size={18} />
+          <div>
+            <strong>Private browser vault</strong>
+            <span>Raw evidence stays on this device during analysis.</span>
+          </div>
+        </div>
+
+        <button
+          className="sidebar-footer"
+          type="button"
+          onClick={() => setMerchantOpen(true)}
+          aria-label="Open sample merchant profile"
+        >
+          <div className="merchant-avatar">AH</div>
+          <div>
+            <strong>Asha Home Foods</strong>
+            <span>Sample merchant Â· PP-2048</span>
+          </div>
+          <ChevronRight size={16} />
+        </button>
+      </aside>
+
+      <main className="workspace">
+        <header className="topbar">
+          <div>
+            <span className="crumb">Cases / PP-2048</span>
+            <h1>Working capital evidence review</h1>
+          </div>
+          <div className="top-actions">
+            <span className="network-pill"><i /> Solana devnet</span>
+            <button
+              className={walletAddress ? "button wallet-button connected" : "button wallet-button"}
+              type="button"
+              onClick={() => walletAddress ? setView("credential") : void connectWallet()}
+              title={walletAddress ? "Open wallet proof controls" : "Connect Solflare or Phantom"}
+            >
+              <WalletCards size={17} />
+              {walletAddress ? shortHash(walletAddress) : "Connect wallet"}
+            </button>
+            <button className="icon-button" type="button" title="Reset case" onClick={clearCase}>
+              <RefreshCw size={17} />
+            </button>
+            <button className="button outline" type="button" onClick={() => setImportOpen(true)}>
+              <FileUp size={17} /> Import evidence
+            </button>
+          </div>
+        </header>
+
+        {view === "workbench" && (
+          <section className="page-content">
+            <div className="case-banner">
+              <div>
+                <span className="eyebrow">Live evidence compiler</span>
+                <h2>Turn fragmented transactions into verified commerce.</h2>
+                <p>
+                  Reconcile orders, invoices and payment credits into lender-readable revenue events.
+                  Every result keeps its source trail and reason.
+                </p>
+              </div>
+              <div className="banner-actions">
+                {!records.length ? (
+                  <button className="button primary" type="button" onClick={loadSample}>
+                    <Sparkles size={17} /> Load pilot case
+                  </button>
+                ) : (
+                  <button className="button primary" type="button" onClick={() => setView("policy")}>
+                    Run decision policy <ArrowUpRight size={17} />
+                  </button>
+                )}
+                <button className="button subtle" type="button" onClick={() => setImportOpen(true)}>
+                  <UploadCloud size={17} /> Use my data
+                </button>
+              </div>
+            </div>
+
+            <div className="metric-grid">
+              <Metric
+                icon={Banknote}
+                label="Supported monthly revenue"
+                value={records.length ? formatMoney(metrics.averageMonthly) : "â€”"}
+                note={records.length ? `${metrics.months} observed months` : "Waiting for evidence"}
+              />
+              <Metric
+                icon={GitMerge}
+                label="Triangulated events"
+                value={records.length ? `${metrics.triangulatedCount}` : "â€”"}
+                note={records.length ? `${metrics.coverage}% evidence coverage` : "No graph built"}
+              />
+              <Metric
+                icon={Gauge}
+                label="Revenue stability"
+                value={records.length ? `${Math.max(0, 100 - Math.round(metrics.volatility * 100))}%` : "â€”"}
+                note={records.length ? `${Math.round(metrics.trend * 100)}% period trend` : "No model output"}
+              />
+              <Metric
+                icon={ShieldCheck}
+                label="Proof confidence"
+                value={records.length ? `${metrics.confidence}%` : "â€”"}
+                note={records.length ? `${metrics.excluded} excluded signals` : "Not assessed"}
+              />
+            </div>
+
+            <div className="workbench-grid">
+              <section className="panel source-panel">
+                <div className="panel-header">
+                  <div>
+                    <span className="panel-kicker">Evidence inputs</span>
+                    <h3>Source coverage</h3>
+                  </div>
+                  <span className="panel-count">{records.length} records</span>
+                </div>
+                <div className="source-list">
+                  {(Object.keys(SOURCE_META) as SourceType[]).map((source) => {
+                    const count = records.filter((record) => record.source === source).length;
+                    return (
+                      <div className="source-row" key={source}>
+                        <span className={`source-icon ${source}`}>{SOURCE_META[source].short}</span>
+                        <div>
+                          <strong>{SOURCE_META[source].label}</strong>
+                          <small>{count ? `${count} records normalized` : "Not connected"}</small>
+                        </div>
+                        <span className={count ? "source-state connected" : "source-state"}>
+                          {count ? <Check size={14} /> : <Link2 size={14} />}
+                          {count ? "Ready" : "Add"}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
+                <button className="button dashed" type="button" onClick={() => setImportOpen(true)}>
+                  <FileUp size={17} /> Add source evidence
+                </button>
+              </section>
+
+              <section className="panel graph-panel">
+                <div className="panel-header graph-header">
+                  <div>
+                    <span className="panel-kicker">Revenue event graph</span>
+                    <h3>Reconciled commerce</h3>
+                  </div>
+                  <label className="search-field">
+                    <Search size={16} />
+                    <input
+                      value={query}
+                      onChange={(event) => setQuery(event.target.value)}
+                      placeholder="Search payer"
+                      aria-label="Search reconciled revenue"
+                    />
+                  </label>
+                </div>
+                {!records.length ? (
+                  <EmptyState onLoad={loadSample} onImport={() => setImportOpen(true)} />
+                ) : (
+                  <div className="event-table-wrap">
+                    <table className="event-table">
+                      <thead>
+                        <tr>
+                          <th>Revenue event</th>
+                          <th>Evidence chain</th>
+                          <th>Amount</th>
+                          <th>Confidence</th>
+                          <th>Status</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {filteredEvents.map((event) => (
+                          <tr key={event.id}>
+                            <td>
+                              <strong>{event.counterparty}</strong>
+                              <span>{new Date(event.timestamp).toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" })}</span>
+                            </td>
+                            <td>
+                              <div className="chain">
+                                {event.sources.map((source, index) => (
+                                  <span key={source}>
+                                    <i className={source}>{SOURCE_META[source].short}</i>
+                                    {index < event.sources.length - 1 && <b />}
+                                  </span>
+                                ))}
+                              </div>
+                            </td>
+                            <td className="money-cell">{formatMoney(event.amount)}</td>
+                            <td>
+                              <div className="confidence-cell">
+                                <span><i style={{ width: `${event.confidence}%` }} /></span>
+                                <b>{event.confidence}%</b>
+                              </div>
+                            </td>
+                            <td><Status status={event.status} /></td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
+              </section>
+            </div>
+          </section>
+        )}
+
+        {view === "policy" && (
+          <section className="page-content">
+            <div className="section-title">
+              <div>
+                <span className="eyebrow">Explainable decision lab</span>
+                <h2>One decision. Every reason replayable.</h2>
+                <p>The policy uses normalized evidence, never a black-box universal credit score.</p>
+              </div>
+              <div className={`decision-badge ${decision.toLowerCase().replaceAll(" ", "-")}`}>
+                <span>Current outcome</span>
+                <strong>{decision}</strong>
+              </div>
+            </div>
+
+            <div className="decision-layout">
+              <section className="panel policy-panel">
+                <div className="panel-header">
+                  <div>
+                    <span className="panel-kicker">Policy execution</span>
+                    <h3>Working capital second-look v1</h3>
+                  </div>
+                  <span className="policy-version">POLICY 0x31A9</span>
+                </div>
+                <div className="policy-list">
+                  {policy.map((check) => (
+                    <div className="policy-row" key={check.code}>
+                      <span className={check.pass ? "check-icon pass" : "check-icon fail"}>
+                        {check.pass ? <Check size={17} /> : <CircleAlert size={17} />}
+                      </span>
+                      <div className="policy-copy">
+                        <strong>{check.label}</strong>
+                        <span>{check.detail}</span>
+                        <code>{check.code}</code>
+                      </div>
+                      <div className="policy-value">
+                        <strong>{check.value}</strong>
+                        <span>{check.pass ? "Requirement met" : "Needs evidence"}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              <aside className="decision-side">
+                <section className="panel outcome-panel">
+                  <span className="panel-kicker">Decision receipt</span>
+                  <div className="outcome-score">
+                    <strong>{passCount}/{policy.length}</strong>
+                    <span>policy conditions met</span>
+                  </div>
+                  <dl>
+                    <div><dt>Data quality</dt><dd>{metrics.confidence || 0}%</dd></div>
+                    <div><dt>Policy result</dt><dd>{decision}</dd></div>
+                    <div><dt>Human review</dt><dd>Required</dd></div>
+                  </dl>
+                  <button className="button primary full" type="button" onClick={() => setView("credential")} disabled={!records.length}>
+                    Create proof passport <ArrowUpRight size={17} />
+                  </button>
+                </section>
+
+                <section className="gap-panel">
+                  <div className="gap-icon"><Activity size={18} /></div>
+                  <div>
+                    <strong>Evidence gap map</strong>
+                    {policy.every((item) => item.pass) ? (
+                      <p>No blocking gap. This case is ready for lender second-look review.</p>
+                    ) : (
+                      <p>{policy.filter((item) => !item.pass).map((item) => item.label).join(" and ")} need improvement or supporting evidence.</p>
+                    )}
+                  </div>
+                </section>
+              </aside>
+            </div>
+          </section>
+        )}
+
+        {view === "credential" && (
+          <section className="page-content">
+            <div className="section-title">
+              <div>
+                <span className="eyebrow">Consent-bound proof passport</span>
+                <h2>Share a claim, not a financial life.</h2>
+                <p>The merchant chooses exactly what a verifier can see and for how long.</p>
+              </div>
+              <span className="standard-pill"><BadgeCheck size={16} /> SAS-compatible schema</span>
+            </div>
+
+            <div className="credential-layout">
+              <section className="panel consent-panel">
+                <div className="panel-header">
+                  <div>
+                    <span className="panel-kicker">Disclosure policy</span>
+                    <h3>Verifier permissions</h3>
+                  </div>
+                  <ShieldCheck size={22} />
+                </div>
+                <div className="consent-list">
+                  <ConsentToggle
+                    checked={shareRevenue}
+                    onChange={setShareRevenue}
+                    label="Revenue threshold"
+                    detail={`Prove monthly supported revenue is above â‚¹35,000. Exact revenue remains hidden.`}
+                  />
+                  <ConsentToggle
+                    checked={shareStability}
+                    onChange={setShareStability}
+                    label="Revenue stability"
+                    detail="Share whether the revenue pattern meets the lender stability policy."
+                  />
+                  <ConsentToggle
+                    checked={shareSources}
+                    onChange={setShareSources}
+                    label="Source diversity"
+                    detail="Share the number of independent evidence source types."
+                  />
+                </div>
+                <div className="expiry-control">
+                  <div>
+                    <strong>Consent expiry</strong>
+                    <span>Verifier access automatically expires</span>
+                  </div>
+                  <div className="segmented">
+                    {[1, 7, 30].map((days) => (
+                      <button
+                        type="button"
+                        className={consentDays === days ? "active" : ""}
+                        onClick={() => setConsentDays(days)}
+                        key={days}
+                      >
+                        {days}d
+                      </button>
+                    ))}
+                  </div>
+                </div>
+                <button className="button primary full" type="button" onClick={generateCredential} disabled={proofBusy || !records.length}>
+                  {proofBusy ? <RefreshCw className="spin" size={17} /> : <Fingerprint size={17} />}
+                  Generate private commitment
+                </button>
+              </section>
+
+              <section className="passport">
+                <div className="passport-top">
+                  <div>
+                    <span>PAYPROOF / COMMERCE PASSPORT</span>
+                    <strong>Asha Home Foods</strong>
+                    <small>Case PP-2048 Â· sample identity bound to issuer wallet</small>
+                  </div>
+                  <span className="passport-mark"><Fingerprint size={24} /></span>
+                </div>
+                <div className="claim-band">
+                  <span>Policy result</span>
+                  <strong>{decision}</strong>
+                </div>
+                <div className="claim-grid">
+                  <div>
+                    <span>Revenue threshold</span>
+                    <strong>{shareRevenue ? (metrics.averageMonthly >= 35000 ? "Above â‚¹35k" : "Not met") : "Not shared"}</strong>
+                  </div>
+                  <div>
+                    <span>Stability predicate</span>
+                    <strong>{shareStability ? (metrics.volatility <= 0.35 ? "Policy met" : "Review") : "Not shared"}</strong>
+                  </div>
+                  <div>
+                    <span>Observed history</span>
+                    <strong>{metrics.months} months</strong>
+                  </div>
+                  <div>
+                    <span>Expires</span>
+                    <strong>{consentDays} days</strong>
+                  </div>
+                </div>
+                <div className="commitment-block">
+                  <div><span>Evidence root</span><code>{shortHash(root)}</code></div>
+                  <div><span>Credential commitment</span><code>{shortHash(commitment)}</code></div>
+                </div>
+                <div className="passport-footer">
+                  <span><LockKeyhole size={14} /> Raw evidence excluded</span>
+                  <span><Database size={14} /> Schema v2</span>
+                  <span><UserRoundCheck size={14} /> Human review</span>
+                </div>
+              </section>
+
+              <section className="panel chain-panel">
+                <div className="panel-header">
+                  <div>
+                    <span className="panel-kicker">Trust rail</span>
+                    <h3>Solana proof commitment</h3>
+                  </div>
+                  <span className={transaction ? "chain-live confirmed" : "chain-live"}><i /> {transaction ? "Confirmed" : "Devnet"}</span>
+                </div>
+                <div className="chain-steps">
+                  <ChainStep done={Boolean(commitment)} icon={FileCheck2} label="Credential commitment" value={commitment ? shortHash(commitment) : "Generate first"} />
+                  <ChainStep done={Boolean(walletAddress)} icon={WalletCards} label="Issuer wallet" value={walletAddress ? shortHash(walletAddress) : "Not connected"} />
+                  <ChainStep done={Boolean(transaction)} icon={BadgeCheck} label="On-chain receipt" value={transaction ? shortHash(transaction) : "Not anchored"} />
+                </div>
+                <p className="proof-message">{proofMessage}</p>
+                {!walletAddress ? (
+                  <button className="button outline full" type="button" onClick={connectWallet}>
+                    <WalletCards size={17} /> Connect Solana wallet
+                  </button>
+                ) : (
+                  <button className="button primary full" type="button" onClick={anchorCommitment} disabled={proofBusy}>
+                    {proofBusy ? <RefreshCw className="spin" size={17} /> : <KeyRound size={17} />}
+                    Anchor proof on devnet
+                  </button>
+                )}
+                {transaction && (
+                  <a className="explorer-link" href={`https://explorer.solana.com/tx/${transaction}?cluster=devnet`} target="_blank" rel="noreferrer">
+                    Open Solana receipt <ArrowUpRight size={15} />
+                  </a>
+                )}
+              </section>
+            </div>
+          </section>
+        )}
+
+        {view === "verifier" && (
+          <section className="page-content verifier-page">
+            <div className="verifier-toolbar">
+              <div>
+                <span className="eyebrow">External verifier preview</span>
+                <h2>Lender sees the decision evidence, not the documents.</h2>
+              </div>
+              <span className="access-pill"><LockKeyhole size={15} /> Access expires in {consentDays} days</span>
+            </div>
+
+            <section className="verification-sheet">
+              <header>
+                <div className="verify-brand">
+                  <span className="brand-symbol">P</span>
+                  <div><strong>PayProof Verify</strong><small>Cryptographic commerce evidence</small></div>
+                </div>
+                <span className={commitment ? "verified-pill ready" : "verified-pill"}>
+                  {commitment ? <BadgeCheck size={16} /> : <CircleAlert size={16} />}
+                  {commitment ? "Credential valid" : "Credential pending"}
+                </span>
+              </header>
+              <div className="verify-hero">
+                <div>
+                  <span className="panel-kicker">Merchant claim</span>
+                  <h3>{decision}</h3>
+                  <p>For working-capital manual review. This is not a loan approval or bureau score.</p>
+                </div>
+                <div className="verify-score">
+                  <strong>{passCount}/{policy.length}</strong>
+                  <span>policy checks met</span>
+                </div>
+              </div>
+              <div className="verify-claims">
+                {shareRevenue && <VerifierClaim icon={Banknote} label="Revenue threshold" value={metrics.averageMonthly >= 35000 ? "Above â‚¹35,000 / month" : "Threshold not met"} />}
+                {shareStability && <VerifierClaim icon={Activity} label="Revenue stability" value={metrics.volatility <= 0.35 ? "Policy condition met" : "Manual review required"} />}
+                {shareSources && <VerifierClaim icon={GitMerge} label="Independent sources" value={`${metrics.sources} evidence types`} />}
+                <VerifierClaim icon={ShieldCheck} label="Evidence confidence" value={`${metrics.confidence}%`} />
+              </div>
+              <div className="verify-audit">
+                <div>
+                  <span>Evidence commitment</span>
+                  <code>{commitment || "Credential has not been generated"}</code>
+                </div>
+                <div>
+                  <span>Solana receipt</span>
+                  <code>{transaction || "Awaiting on-chain anchor"}</code>
+                </div>
+                <div>
+                  <span>Raw documents</span>
+                  <strong>Unavailable by design</strong>
+                </div>
+              </div>
+              <footer>
+                <span><ShieldCheck size={15} /> Issuer signature checked</span>
+                <span><FileCheck2 size={15} /> Policy receipt replayable</span>
+                <span><LockKeyhole size={15} /> Purpose-bound access</span>
+              </footer>
+            </section>
+          </section>
+        )}
+      </main>
+
+      {importOpen && (
+        <div className="modal-backdrop" role="presentation" onMouseDown={() => setImportOpen(false)}>
+          <section className="import-modal" role="dialog" aria-modal="true" aria-labelledby="import-title" onMouseDown={(event) => event.stopPropagation()}>
+            <header>
+              <div>
+                <span className="eyebrow">Private evidence import</span>
+                <h2 id="import-title">Add commerce records</h2>
+              </div>
+              <button className="icon-button" type="button" onClick={() => setImportOpen(false)} title="Close import">
+                <X size={18} />
+              </button>
+            </header>
+            <div className="privacy-notice">
+              <LockKeyhole size={20} />
+              <div>
+                <strong>Local processing is active</strong>
+                <p>Your CSV or JSON is parsed in this browser. The raw file is not sent to PayProof.</p>
+              </div>
+            </div>
+            <label className="field-label" htmlFor="source-hint">Default source type</label>
+            <select id="source-hint" value={sourceHint} onChange={(event) => setSourceHint(event.target.value as SourceType)}>
+              {(Object.keys(SOURCE_META) as SourceType[]).map((source) => (
+                <option value={source} key={source}>{SOURCE_META[source].label}</option>
+              ))}
+            </select>
+            <button className="drop-zone" type="button" onClick={() => inputRef.current?.click()}>
+              <UploadCloud size={28} />
+              <strong>Choose CSV or JSON evidence</strong>
+              <span>Required: date, amount and counterparty. Optional: reference, source and id.</span>
+            </button>
+            <input ref={inputRef} className="hidden-input" type="file" multiple accept=".csv,.json,text/csv,application/json" onChange={importFiles} />
+            {importMessage && <p className="import-message">{importMessage}</p>}
+            <div className="modal-footer">
+              <a
+                className="button subtle"
+                href={`${publicBasePath}/samples/payproof-pilot-evidence.zip`}
+                download
+              >
+                <Download size={17} /> Download sample bundle
+              </a>
+              <button className="button subtle" type="button" onClick={loadSample}><Sparkles size={17} /> Use pilot dataset</button>
+              <button className="button primary" type="button" onClick={() => setImportOpen(false)}>Done</button>
+            </div>
+          </section>
+        </div>
+      )}
+
+      {merchantOpen && (
+        <div className="modal-backdrop" role="presentation" onMouseDown={() => setMerchantOpen(false)}>
+          <section
+            className="import-modal merchant-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="merchant-title"
+            onMouseDown={(event) => event.stopPropagation()}
+          >
+            <header>
+              <div>
+                <span className="eyebrow">Current case identity</span>
+                <h2 id="merchant-title">Asha Home Foods</h2>
+              </div>
+              <button className="icon-button" type="button" onClick={() => setMerchantOpen(false)} title="Close merchant profile">
+                <X size={18} />
+              </button>
+            </header>
+            <div className="merchant-profile-head">
+              <div className="merchant-avatar large">AH</div>
+              <div>
+                <span className="sample-badge">Sample merchant</span>
+                <p>
+                  Fictional home-food business used to demonstrate PayProof safely.
+                  No real merchant identity or Udyam verification is being claimed.
+                </p>
+              </div>
+            </div>
+            <dl className="merchant-context-grid">
+              <div><dt>Case ID</dt><dd>PP-2048</dd></div>
+              <div><dt>Use case</dt><dd>Working capital review</dd></div>
+              <div><dt>Evidence</dt><dd>{records.length ? `${records.length} local records` : "Not loaded"}</dd></div>
+              <div><dt>Network</dt><dd>Solana devnet</dd></div>
+            </dl>
+            <div className="merchant-wallet-row">
+              <div>
+                <span>Issuer wallet</span>
+                <strong>{walletAddress ? shortHash(walletAddress) : "Not connected"}</strong>
+              </div>
+              <button
+                className="button outline"
+                type="button"
+                onClick={() => walletAddress ? setView("credential") : void connectWallet()}
+              >
+                <WalletCards size={17} />
+                {walletAddress ? "Open proof controls" : "Connect wallet"}
+              </button>
+            </div>
+            <div className="modal-footer">
+              <button
+                className="button subtle"
+                type="button"
+                onClick={() => {
+                  clearCase();
+                  setMerchantOpen(false);
+                }}
+              >
+                Reset case
+              </button>
+              <button
+                className="button primary"
+                type="button"
+                onClick={() => {
+                  if (!records.length) loadSample();
+                  setView("workbench");
+                  setMerchantOpen(false);
+                }}
+              >
+                <Network size={17} /> Open evidence
+              </button>
+            </div>
+          </section>
+        </div>
+      )}
+
+      {walletNotice && (
+        <div className="wallet-toast" role="status">
+          <WalletCards size={18} />
+          <span>{walletNotice}</span>
+          <button type="button" onClick={() => setWalletNotice("")} title="Dismiss wallet message">
+            <X size={16} />
+          </button>
+        </div>
+      )}
+    </div>
+  );
+}
+
+type WalletProvider = {
+  isSolflare?: boolean;
+  publicKey?: { toString(): string };
+  connect(): Promise<{ publicKey?: { toString(): string } }>;
+  signAndSendTransaction?: (transaction: unknown) => Promise<string | { signature: string }>;
+  signTransaction?: (transaction: unknown) => Promise<{ serialize(): Uint8Array }>;
+};
+
+function Metric({
+  icon: Icon,
+  label,
+  value,
+  note,
+}: {
+  icon: typeof Banknote;
+  label: string;
+  value: string;
+  note: string;
+}) {
+  return (
+    <article className="metric">
+      <div className="metric-head"><span>{label}</span><Icon size={18} /></div>
+      <strong>{value}</strong>
+      <small>{note}</small>
+    </article>
+  );
+}
+
+function Status({ status }: { status: RevenueEvent["status"] }) {
+  return (
+    <span className={`status ${status}`}>
+      <i />
+      {status === "verified" ? "Verified" : status === "supported" ? "Supported" : "Unmatched"}
+    </span>
+  );
+}
+
+function EmptyState({ onLoad, onImport }: { onLoad(): void; onImport(): void }) {
+  return (
+    <div className="empty-state">
+      <div className="empty-icon"><Network size={28} /></div>
+      <h3>No commerce graph yet</h3>
+      <p>Import real records or load the pilot case to see evidence reconciliation working.</p>
+      <div>
+        <button className="button primary" type="button" onClick={onLoad}><Sparkles size={17} /> Load pilot case</button>
+        <button className="button subtle" type="button" onClick={onImport}><FileUp size={17} /> Import data</button>
+      </div>
+    </div>
+  );
+}
+
+function ConsentToggle({
+  checked,
+  onChange,
+  label,
+  detail,
+}: {
+  checked: boolean;
+  onChange(value: boolean): void;
+  label: string;
+  detail: string;
+}) {
+  return (
+    <label className="consent-row">
+      <span className={checked ? "toggle on" : "toggle"}><i /></span>
+      <span><strong>{label}</strong><small>{detail}</small></span>
+      <input type="checkbox" checked={checked} onChange={(event) => onChange(event.target.checked)} />
+    </label>
+  );
+}
+
+function ChainStep({
+  done,
+  icon: Icon,
+  label,
+  value,
+}: {
+  done: boolean;
+  icon: typeof FileCheck2;
+  label: string;
+  value: string;
+}) {
+  return (
+    <div className="chain-step">
+      <span className={done ? "done" : ""}>{done ? <Check size={16} /> : <Icon size={16} />}</span>
+      <div><strong>{label}</strong><code>{value}</code></div>
+    </div>
+  );
+}
+
+function VerifierClaim({
+  icon: Icon,
+  label,
+  value,
+}: {
+  icon: typeof Banknote;
+  label: string;
+  value: string;
+}) {
+  return (
+    <div className="verifier-claim">
+      <span><Icon size={18} /></span>
+      <div><small>{label}</small><strong>{value}</strong></div>
+      <BadgeCheck size={18} />
+    </div>
+  );
+}
