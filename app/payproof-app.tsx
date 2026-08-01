@@ -666,11 +666,11 @@ export function PayProofApp() {
     setProofBusy(true);
     setProofMessage("Preparing Solana devnet proof transaction...");
     try {
-      const connection = new Connection(DEVNET_RPC, "confirmed");
+      const connection = new Connection(DEVNET_RPC, "finalized");
       const memoProgram = new PublicKey(MEMO_PROGRAM_ID);
       const walletPublicKey = new PublicKey(provider.publicKey.toString());
       const issuer = walletPublicKey.toBase58();
-      const memo = proofMemo({ payload: credentialPayload, commitment, issuer });
+      const memo = proofMemo({ payload: credentialPayload, commitment });
       const transactionRequest = new Transaction().add(
         new TransactionInstruction({
           keys: [{ pubkey: walletPublicKey, isSigner: true, isWritable: false }],
@@ -679,7 +679,7 @@ export function PayProofApp() {
         }),
       );
       transactionRequest.feePayer = walletPublicKey;
-      const latestBlockhash = await connection.getLatestBlockhash("confirmed");
+      const latestBlockhash = await connection.getLatestBlockhash("finalized");
       transactionRequest.recentBlockhash = latestBlockhash.blockhash;
       let signature = "";
       if (typeof provider.signAndSendTransaction === "function") {
@@ -694,7 +694,7 @@ export function PayProofApp() {
       if (!signature) throw new Error("Wallet did not return a transaction signature.");
       await connection.confirmTransaction(
         { signature, ...latestBlockhash },
-        "confirmed",
+        "finalized",
       );
       const anchoredProof: ProofPackage = {
         protocol: "PayProof",
@@ -707,7 +707,7 @@ export function PayProofApp() {
       };
       setTransaction(signature);
       setProofPackage(anchoredProof);
-      setProofMessage("Proof anchored. Open Lender view to independently verify and share it.");
+      setProofMessage("Proof finalized on Solana. Open Lender view to independently verify and share it.");
     } catch (error) {
       setProofMessage(`Proof transaction failed: ${(error as Error).message}`);
     } finally {
