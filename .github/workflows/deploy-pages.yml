@@ -51,7 +51,7 @@ jobs:
       - name: Package static export
         shell: bash
         run: |
-          export_index="$(find . -maxdepth 5 -type f -name index.html ! -path './node_modules/*' ! -path './.git/*' | head -n 1)"
+          export_index="$(find . -maxdepth 5 -type f -name index.html ! -path './node_modules/*' ! -path './.git/*' ! -path './_not-found/*' ! -path '*/404/*' | head -n 1)"
           if [ -z "$export_index" ]; then
             echo "No static index.html was produced."
             exit 1
@@ -61,6 +61,7 @@ jobs:
           mkdir -p pages-artifact
           cp -R "$export_root"/. pages-artifact/
           test -f pages-artifact/index.html
+          grep -q "PayProof | Invisible Commerce Proof Network" pages-artifact/index.html
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
