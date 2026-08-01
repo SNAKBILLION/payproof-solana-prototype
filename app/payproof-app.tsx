@@ -32,6 +32,13 @@ import {
   X,
 } from "lucide-react";
 import Papa from "papaparse";
+import { Buffer } from "buffer";
+import {
+  Connection,
+  PublicKey,
+  Transaction,
+  TransactionInstruction,
+} from "@solana/web3.js";
 import { ChangeEvent, useMemo, useRef, useState } from "react";
 
 const publicBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -499,11 +506,9 @@ export function PayProofApp() {
     setProofBusy(true);
     setProofMessage("Preparing Solana devnet proof transaction...");
     try {
-      // Keep the wallet module outside the server bundle; no private key or RPC secret ships with PayProof.
-      // @ts-expect-error TypeScript does not resolve HTTPS module specifiers.
-      const web3 = await import(/* @vite-ignore */ "https://esm.sh/@solana/web3.js@1.98.2");
-      const connection = new web3.Connection("https://api.devnet.solana.com", "confirmed");
-      const memoProgram = new web3.PublicKey("MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr");
+      const connection = new Connection("https://api.devnet.solana.com", "confirmed");
+      const memoProgram = new PublicKey("MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr");
+      const walletPublicKey = new PublicKey(provider.publicKey.toString());
       const memo = JSON.stringify({
         protocol: "PayProof",
         schema: "invisible-commerce.v2",
@@ -511,27 +516,31 @@ export function PayProofApp() {
         evidenceRoot: root,
         expiresInDays: consentDays,
       });
-      const transactionRequest = new web3.Transaction().add(
-        new web3.TransactionInstruction({
-          keys: [{ pubkey: provider.publicKey, isSigner: true, isWritable: false }],
+      const transactionRequest = new Transaction().add(
+        new TransactionInstruction({
+          keys: [{ pubkey: walletPublicKey, isSigner: true, isWritable: false }],
           programId: memoProgram,
-          data: new TextEncoder().encode(memo),
+          data: Buffer.from(memo, "utf8"),
         }),
       );
-      transactionRequest.feePayer = provider.publicKey;
-      transactionRequest.recentBlockhash = (
-        await connection.getLatestBlockhash("confirmed")
-      ).blockhash;
+      transactionRequest.feePayer = walletPublicKey;
+      const latestBlockhash = await connection.getLatestBlockhash("confirmed");
+      transactionRequest.recentBlockhash = latestBlockhash.blockhash;
       let signature = "";
-      if (provider.signAndSendTransaction) {
+      if (typeof provider.signAndSendTransaction === "function") {
         const result = await provider.signAndSendTransaction(transactionRequest);
         signature = typeof result === "string" ? result : result.signature;
-      } else if (provider.signTransaction) {
+      } else if (typeof provider.signTransaction === "function") {
         const signed = await provider.signTransaction(transactionRequest);
         signature = await connection.sendRawTransaction(signed.serialize());
+      } else {
+        throw new Error("Connected wallet cannot sign Solana transactions.");
       }
       if (!signature) throw new Error("Wallet did not return a transaction signature.");
-      await connection.confirmTransaction(signature, "confirmed");
+      await connection.confirmTransaction(
+        { signature, ...latestBlockhash },
+        "confirmed",
+      );
       setTransaction(signature);
       setProofMessage("Proof commitment anchored on Solana devnet.");
     } catch (error) {
