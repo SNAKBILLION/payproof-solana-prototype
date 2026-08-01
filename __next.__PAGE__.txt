@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
-2:I[10047,["/payproof-solana-prototype/_next/static/chunks/074x8-ny00ukg.js","/payproof-solana-prototype/_next/static/chunks/0ezkif5o~9ugs.js"],"PayProofApp"]
+2:I[10047,["/payproof-solana-prototype/_next/static/chunks/074x8-ny00ukg.js","/payproof-solana-prototype/_next/static/chunks/0l8zz.8~z5sbu.js"],"PayProofApp"]
 3:I[84080,["/payproof-solana-prototype/_next/static/chunks/074x8-ny00ukg.js"],"OutletBoundary"]
 4:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{}],[["$","script","script-0",{"src":"/payproof-solana-prototype/_next/static/chunks/0ezkif5o~9ugs.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"C34zSvSsaJBsCUwGMUj9h"}
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{}],[["$","script","script-0",{"src":"/payproof-solana-prototype/_next/static/chunks/0l8zz.8~z5sbu.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"F2gTeCzBnQ9Z-WzAxD_Ys"}
 5:null
