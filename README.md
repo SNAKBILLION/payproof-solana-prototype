@@ -78,6 +78,23 @@ PayProof accepts flexible CSV/JSON field names. A canonical row looks like:
 Valid source values are `order`, `invoice`, `bank` and `settlement`. Imported
 files are processed in the browser and are not uploaded by the current product.
 
+## Verification protocol
+
+The canonical source lives on the `source-v4` branch. Every push is linted, tested,
+built and deployed through GitHub Actions.
+
+PayProof proof packages are schema-validated before use. New receipts write a compact
+`PP3` envelope to Solana Memo containing only the credential commitment, evidence
+root and expiry. The verifier:
+
+- recomputes the credential commitment from the displayed claims;
+- requires the issuer wallet to be a signer on the transaction;
+- checks every Memo instruction for an exact proof match;
+- requires a finalized Solana transaction;
+- binds the chain block time to the credential issue time;
+- enforces the consent expiry at verification time; and
+- remains compatible with previously issued full v3 receipts.
+
 ## Architecture
 
 ```mermaid
@@ -101,7 +118,8 @@ credential commitment and minimal proof metadata are written to Solana.
 
 ## Current scope
 
-This repository contains a production-grade browser application and a real Solana
-devnet transaction path. A full deployment should add authenticated case storage,
-issuer key management, revocation, lender organizations and repayment outcome
-attestations.
+This repository is a working technical pilot with a real Solana devnet transaction
+and independent verification path. It is not yet a production lending system.
+Production rollout still requires authenticated case storage, audited source
+adapters, managed issuer keys, revocation/status infrastructure, lender organization
+controls, monitoring and repayment outcome attestations.
