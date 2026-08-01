@@ -83,3 +83,22 @@ jobs:
       - name: Deploy verified build
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Smoke test deployed site
+        shell: bash
+        run: |
+          site="https://snakbillion.github.io/payproof-solana-prototype/"
+          html=""
+          for attempt in 1 2 3 4 5; do
+            html="$(curl -fsSL "$site?v=$GITHUB_SHA")" && \
+              grep -q "PayProof | Invisible Commerce Proof Network" <<<"$html" && break
+            sleep 5
+          done
+          grep -q "PayProof | Invisible Commerce Proof Network" <<<"$html"
+          mapfile -t assets < <(
+            grep -oE '/payproof-solana-prototype/[^"]+\.(js|css)' <<<"$html" | sort -u
+          )
+          test "${#assets[@]}" -gt 0
+          for asset in "${assets[@]}"; do
+            curl -fsSL "https://snakbillion.github.io$asset" > /dev/null
+          done
