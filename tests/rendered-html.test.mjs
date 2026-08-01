@@ -44,15 +44,23 @@ test("server-renders the PayProof workspace and absolute social metadata", async
   assert.doesNotMatch(html, /Income Reliability Score|Run Product Flow|Superteam builders/i);
 });
 
-test("ships the production app without the disposable starter or legacy static shell", async () => {
-  const [packageJson, appSource] = await Promise.all([
+test("ships persistent, independently verifiable proof infrastructure", async () => {
+  const [packageJson, appSource, protocolSource, vaultSource, verifierSource] = await Promise.all([
     readFile(new URL("../package.json", import.meta.url), "utf8"),
     readFile(new URL("../app/payproof-app.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/proof-protocol.ts", import.meta.url), "utf8"),
+    readFile(new URL("../app/browser-vault.ts", import.meta.url), "utf8"),
+    readFile(new URL("../app/proof-verifier.tsx", import.meta.url), "utf8"),
   ]);
 
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
-  assert.match(appSource, /crypto\.subtle\.digest/);
-  assert.match(appSource, /MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr/);
+  assert.match(protocolSource, /crypto\.subtle\.digest/);
+  assert.match(protocolSource, /MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr/);
+  assert.match(protocolSource, /getParsedTransaction/);
+  assert.match(vaultSource, /AES-GCM/);
+  assert.match(verifierSource, /Independently verified/);
+  assert.doesNotMatch(verifierSource, /Issuer signature checked/);
+  assert.match(appSource, /invalidateProof/);
   assert.match(appSource, /papaparse/);
   assert.match(appSource, /NEXT_PUBLIC_BASE_PATH/);
   await assert.rejects(access(new URL("../index.html", import.meta.url)));

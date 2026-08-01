@@ -39,7 +39,19 @@ import {
   Transaction,
   TransactionInstruction,
 } from "@solana/web3.js";
-import { ChangeEvent, useMemo, useRef, useState } from "react";
+import { ChangeEvent, useEffect, useMemo, useRef, useState } from "react";
+import { clearVaultState, loadVaultState, saveVaultState } from "./browser-vault";
+import { ProofVerifier } from "./proof-verifier";
+import {
+  DEVNET_RPC,
+  MEMO_PROGRAM_ID,
+  type CredentialPayload,
+  type ProofPackage,
+  credentialCommitment,
+  decodeProofPackage,
+  proofMemo,
+  sha256,
+} from "./proof-protocol";
 
 const publicBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
@@ -73,6 +85,20 @@ type PolicyCheck = {
   value: string;
   pass: boolean;
   code: string;
+};
+
+type VaultState = {
+  records: EvidenceRecord[];
+  consentDays: number;
+  shareRevenue: boolean;
+  shareStability: boolean;
+  shareSources: boolean;
+  credentialPayload: CredentialPayload | null;
+  commitment: string;
+  root: string;
+  walletAddress: string;
+  transaction: string;
+  proofPackage: ProofPackage | null;
 };
 
 const SAMPLE_EVIDENCE: EvidenceRecord[] = [
@@ -288,11 +314,6 @@ function getPolicyChecks(metrics: ReturnType<typeof computeMetrics>): PolicyChec
   ];
 }
 
-async function sha256(value: string) {
-  const digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(value));
-  return [...new Uint8Array(digest)].map((byte) => byte.toString(16).padStart(2, "0")).join("");
-}
-
 async function merkleRoot(records: EvidenceRecord[]) {
   if (!records.length) return "";
   let layer = await Promise.all(
@@ -359,6 +380,7 @@ export function PayProofApp() {
   const [shareRevenue, setShareRevenue] = useState(true);
   const [shareStability, setShareStability] = useState(true);
   const [shareSources, setShareSources] = useState(false);
+  const [credentialPayload, setCredentialPayload] = useState<CredentialPayload | null>(null);
   const [commitment, setCommitment] = useState("");
   const [root, setRoot] = useState("");
   const [walletAddress, setWalletAddress] = useState("");
@@ -366,6 +388,9 @@ export function PayProofApp() {
   const [proofBusy, setProofBusy] = useState(false);
   const [proofMessage, setProofMessage] = useState("Generate a private credential commitment.");
   const [walletNotice, setWalletNotice] = useState("");
+  const [proofPackage, setProofPackage] = useState<ProofPackage | null>(null);
+  const [externalProof, setExternalProof] = useState<ProofPackage | null>(null);
+  const [vaultReady, setVaultReady] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
   const events = useMemo(() => reconcileEvidence(records), [records]);
@@ -385,13 +410,118 @@ export function PayProofApp() {
       normalizedText(event.counterparty).includes(normalizedText(query)) ||
       normalizedText(event.sources.join(" ")).includes(normalizedText(query)),
   );
+  const anchored = Boolean(
+    proofPackage &&
+      transaction &&
+      proofPackage.transaction === transaction &&
+      proofPackage.commitment === commitment,
+  );
 
-  function loadSample() {
-    setRecords(SAMPLE_EVIDENCE);
+  useEffect(() => {
+    let active = true;
+    async function restore() {
+      const encoded = window.location.hash.startsWith("#proof=")
+        ? window.location.hash.slice("#proof=".length)
+        : "";
+      if (encoded) {
+        try {
+          if (active) setExternalProof(decodeProofPackage(encoded));
+        } catch (error) {
+          if (active) setWalletNotice((error as Error).message);
+        } finally {
+          if (active) setVaultReady(true);
+        }
+        return;
+      }
+
+      try {
+        const saved = await loadVaultState<VaultState>();
+        if (!active || !saved) return;
+        setRecords(saved.records ?? []);
+        setConsentDays(saved.consentDays ?? 7);
+        setShareRevenue(saved.shareRevenue ?? true);
+        setShareStability(saved.shareStability ?? true);
+        setShareSources(saved.shareSources ?? false);
+        setCredentialPayload(saved.credentialPayload ?? null);
+        setCommitment(saved.commitment ?? "");
+        setRoot(saved.root ?? "");
+        setWalletAddress(saved.walletAddress ?? "");
+        setTransaction(saved.transaction ?? "");
+        setProofPackage(saved.proofPackage ?? null);
+        if (saved.proofPackage) setProofMessage("Anchored proof restored from the encrypted browser vault.");
+        else if (saved.records?.length) setProofMessage("Private case restored from the encrypted browser vault.");
+      } catch {
+        if (active) setWalletNotice("The encrypted browser vault could not be restored. Starting a clean case.");
+      } finally {
+        if (active) setVaultReady(true);
+      }
+    }
+    void restore();
+    function openProofFromHash() {
+      if (!window.location.hash.startsWith("#proof=")) return;
+      try {
+        setExternalProof(
+          decodeProofPackage(window.location.hash.slice("#proof=".length)),
+        );
+      } catch (error) {
+        setWalletNotice((error as Error).message);
+      }
+    }
+    window.addEventListener("hashchange", openProofFromHash);
+    return () => {
+      active = false;
+      window.removeEventListener("hashchange", openProofFromHash);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!vaultReady || externalProof) return;
+    const timer = window.setTimeout(() => {
+      void saveVaultState({
+        records,
+        consentDays,
+        shareRevenue,
+        shareStability,
+        shareSources,
+        credentialPayload,
+        commitment,
+        root,
+        walletAddress,
+        transaction,
+        proofPackage,
+      } satisfies VaultState).catch(() => {
+        setWalletNotice("Browser vault update failed. Keep this tab open until the proof is anchored.");
+      });
+    }, 250);
+    return () => window.clearTimeout(timer);
+  }, [
+    commitment,
+    consentDays,
+    credentialPayload,
+    externalProof,
+    proofPackage,
+    records,
+    root,
+    shareRevenue,
+    shareSources,
+    shareStability,
+    transaction,
+    vaultReady,
+    walletAddress,
+  ]);
+
+  function invalidateProof(message = "Proof settings changed. Generate a new commitment before anchoring.") {
+    setCredentialPayload(null);
     setCommitment("");
     setRoot("");
     setTransaction("");
-    setProofMessage("Evidence loaded locally. Review the graph before issuing proof.");
+    setProofPackage(null);
+    setProofMessage(message);
+  }
+
+  function loadSample() {
+    setRecords(SAMPLE_EVIDENCE);
+    invalidateProof("Evidence loaded locally. Review the graph before issuing proof.");
   }
 
   function clearCase() {
@@ -399,8 +529,11 @@ export function PayProofApp() {
     setCommitment("");
     setRoot("");
     setWalletAddress("");
+    setCredentialPayload(null);
+    setProofPackage(null);
     setTransaction("");
     setProofMessage("Generate a private credential commitment.");
+    void clearVaultState();
   }
 
   async function importFiles(event: ChangeEvent<HTMLInputElement>) {
@@ -422,7 +555,10 @@ export function PayProofApp() {
         imported.push(...parseRows(result.data, sourceHint));
       }
     }
-    setRecords((current) => [...current, ...imported]);
+    if (imported.length) {
+      setRecords((current) => [...current, ...imported]);
+      invalidateProof("Evidence changed. Review the graph and generate a fresh commitment.");
+    }
     setImportMessage(
       imported.length
         ? `${imported.length} records normalized. Raw files were not uploaded.`
@@ -438,26 +574,46 @@ export function PayProofApp() {
     }
     setProofBusy(true);
     setProofMessage("Building evidence Merkle tree and policy receipt...");
-    const evidenceRoot = await merkleRoot(records);
-    const payload = {
-      schema: "payproof.invisible-commerce.v2",
-      subject: "merchant:asha-home-foods",
-      evidenceRoot,
-      policy: "working-capital-second-look.v1",
-      decision,
-      claims: {
-        revenueThreshold: shareRevenue ? metrics.averageMonthly >= 35000 : undefined,
-        stableRevenue: shareStability ? metrics.volatility <= 0.35 : undefined,
-        sourceDiversity: shareSources ? metrics.sources : undefined,
-      },
-      observedMonths: metrics.months,
-      expiresAt: new Date(Date.now() + consentDays * 86400000).toISOString(),
-    };
-    const reportCommitment = await sha256(JSON.stringify(payload));
-    setRoot(evidenceRoot);
-    setCommitment(reportCommitment);
-    setProofMessage("Private commitment ready. Raw evidence is not included.");
-    setProofBusy(false);
+    try {
+      const evidenceRoot = await merkleRoot(records);
+      const issuedAt = new Date();
+      const payload: CredentialPayload = {
+        schema: "payproof.invisible-commerce.v3",
+        credentialId: `pp_${crypto.randomUUID()}`,
+        subject: {
+          id: "merchant:asha-home-foods",
+          name: "Asha Home Foods",
+        },
+        purpose: "working-capital-second-look",
+        evidenceRoot,
+        policy: {
+          id: "working-capital-second-look.v1",
+          decision,
+          checksPassed: passCount,
+          checksTotal: policy.length,
+        },
+        claims: {
+          revenueThreshold: shareRevenue ? metrics.averageMonthly >= 35000 : undefined,
+          stableRevenue: shareStability ? metrics.volatility <= 0.35 : undefined,
+          sourceDiversity: shareSources ? metrics.sources : undefined,
+          observedMonths: metrics.months,
+          evidenceConfidence: metrics.confidence,
+        },
+        issuedAt: issuedAt.toISOString(),
+        expiresAt: new Date(issuedAt.getTime() + consentDays * 86400000).toISOString(),
+      };
+      const reportCommitment = await credentialCommitment(payload);
+      setCredentialPayload(payload);
+      setRoot(evidenceRoot);
+      setCommitment(reportCommitment);
+      setTransaction("");
+      setProofPackage(null);
+      setProofMessage("Private commitment ready. Raw evidence is not included.");
+    } catch (error) {
+      setProofMessage(`Credential generation failed: ${(error as Error).message}`);
+    } finally {
+      setProofBusy(false);
+    }
   }
 
   function getProvider() {
@@ -496,9 +652,13 @@ export function PayProofApp() {
   }
 
   async function anchorCommitment() {
-    if (!commitment) {
+    if (!commitment || !credentialPayload) {
       await generateCredential();
       setProofMessage("Commitment generated. Review it, then anchor the proof.");
+      return;
+    }
+    if (proofPackage?.commitment === commitment && proofPackage.transaction) {
+      setProofMessage("This exact commitment is already anchored. Open Lender view to verify or share it.");
       return;
     }
     const provider = getProvider() ?? (await connectWallet());
@@ -506,16 +666,11 @@ export function PayProofApp() {
     setProofBusy(true);
     setProofMessage("Preparing Solana devnet proof transaction...");
     try {
-      const connection = new Connection("https://api.devnet.solana.com", "confirmed");
-      const memoProgram = new PublicKey("MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr");
+      const connection = new Connection(DEVNET_RPC, "confirmed");
+      const memoProgram = new PublicKey(MEMO_PROGRAM_ID);
       const walletPublicKey = new PublicKey(provider.publicKey.toString());
-      const memo = JSON.stringify({
-        protocol: "PayProof",
-        schema: "invisible-commerce.v2",
-        commitment,
-        evidenceRoot: root,
-        expiresInDays: consentDays,
-      });
+      const issuer = walletPublicKey.toBase58();
+      const memo = proofMemo({ payload: credentialPayload, commitment, issuer });
       const transactionRequest = new Transaction().add(
         new TransactionInstruction({
           keys: [{ pubkey: walletPublicKey, isSigner: true, isWritable: false }],
@@ -541,13 +696,35 @@ export function PayProofApp() {
         { signature, ...latestBlockhash },
         "confirmed",
       );
+      const anchoredProof: ProofPackage = {
+        protocol: "PayProof",
+        version: 3,
+        network: "devnet",
+        payload: credentialPayload,
+        commitment,
+        issuer,
+        transaction: signature,
+      };
       setTransaction(signature);
-      setProofMessage("Proof commitment anchored on Solana devnet.");
+      setProofPackage(anchoredProof);
+      setProofMessage("Proof anchored. Open Lender view to independently verify and share it.");
     } catch (error) {
       setProofMessage(`Proof transaction failed: ${(error as Error).message}`);
     } finally {
       setProofBusy(false);
     }
+  }
+
+  if (externalProof) {
+    return (
+      <ProofVerifier
+        proof={externalProof}
+        external
+        onBack={() =>
+          window.location.assign(`${window.location.origin}${window.location.pathname}`)
+        }
+      />
+    );
   }
 
   return (
@@ -869,7 +1046,7 @@ export function PayProofApp() {
                 <h2>Share a claim, not a financial life.</h2>
                 <p>The merchant chooses exactly what a verifier can see and for how long.</p>
               </div>
-              <span className="standard-pill"><BadgeCheck size={16} /> SAS-compatible schema</span>
+              <span className="standard-pill"><BadgeCheck size={16} /> PayProof schema v3</span>
             </div>
 
             <div className="credential-layout">
@@ -884,19 +1061,28 @@ export function PayProofApp() {
                 <div className="consent-list">
                   <ConsentToggle
                     checked={shareRevenue}
-                    onChange={setShareRevenue}
+                    onChange={(checked) => {
+                      setShareRevenue(checked);
+                      invalidateProof();
+                    }}
                     label="Revenue threshold"
                     detail={`Prove monthly supported revenue is above ₹35,000. Exact revenue remains hidden.`}
                   />
                   <ConsentToggle
                     checked={shareStability}
-                    onChange={setShareStability}
+                    onChange={(checked) => {
+                      setShareStability(checked);
+                      invalidateProof();
+                    }}
                     label="Revenue stability"
                     detail="Share whether the revenue pattern meets the lender stability policy."
                   />
                   <ConsentToggle
                     checked={shareSources}
-                    onChange={setShareSources}
+                    onChange={(checked) => {
+                      setShareSources(checked);
+                      invalidateProof();
+                    }}
                     label="Source diversity"
                     detail="Share the number of independent evidence source types."
                   />
@@ -911,7 +1097,10 @@ export function PayProofApp() {
                       <button
                         type="button"
                         className={consentDays === days ? "active" : ""}
-                        onClick={() => setConsentDays(days)}
+                        onClick={() => {
+                          setConsentDays(days);
+                          invalidateProof();
+                        }}
                         key={days}
                       >
                         {days}d
@@ -921,7 +1110,7 @@ export function PayProofApp() {
                 </div>
                 <button className="button primary full" type="button" onClick={generateCredential} disabled={proofBusy || !records.length}>
                   {proofBusy ? <RefreshCw className="spin" size={17} /> : <Fingerprint size={17} />}
-                  Generate private commitment
+                  {commitment ? "Regenerate private commitment" : "Generate private commitment"}
                 </button>
               </section>
 
@@ -962,7 +1151,7 @@ export function PayProofApp() {
                 </div>
                 <div className="passport-footer">
                   <span><LockKeyhole size={14} /> Raw evidence excluded</span>
-                  <span><Database size={14} /> Schema v2</span>
+                  <span><Database size={14} /> Schema v3</span>
                   <span><UserRoundCheck size={14} /> Human review</span>
                 </div>
               </section>
@@ -973,12 +1162,12 @@ export function PayProofApp() {
                     <span className="panel-kicker">Trust rail</span>
                     <h3>Solana proof commitment</h3>
                   </div>
-                  <span className={transaction ? "chain-live confirmed" : "chain-live"}><i /> {transaction ? "Confirmed" : "Devnet"}</span>
+                  <span className={anchored ? "chain-live confirmed" : "chain-live"}><i /> {anchored ? "Anchored" : "Devnet"}</span>
                 </div>
                 <div className="chain-steps">
                   <ChainStep done={Boolean(commitment)} icon={FileCheck2} label="Credential commitment" value={commitment ? shortHash(commitment) : "Generate first"} />
                   <ChainStep done={Boolean(walletAddress)} icon={WalletCards} label="Issuer wallet" value={walletAddress ? shortHash(walletAddress) : "Not connected"} />
-                  <ChainStep done={Boolean(transaction)} icon={BadgeCheck} label="On-chain receipt" value={transaction ? shortHash(transaction) : "Not anchored"} />
+                  <ChainStep done={anchored} icon={BadgeCheck} label="On-chain receipt" value={anchored && transaction ? shortHash(transaction) : "Not anchored"} />
                 </div>
                 <p className="proof-message">{proofMessage}</p>
                 {!walletAddress ? (
@@ -986,12 +1175,12 @@ export function PayProofApp() {
                     <WalletCards size={17} /> Connect Solana wallet
                   </button>
                 ) : (
-                  <button className="button primary full" type="button" onClick={anchorCommitment} disabled={proofBusy}>
-                    {proofBusy ? <RefreshCw className="spin" size={17} /> : <KeyRound size={17} />}
-                    Anchor proof on devnet
+                  <button className="button primary full" type="button" onClick={anchorCommitment} disabled={proofBusy || anchored}>
+                    {proofBusy ? <RefreshCw className="spin" size={17} /> : anchored ? <BadgeCheck size={17} /> : <KeyRound size={17} />}
+                    {anchored ? "Proof anchored on devnet" : "Anchor proof on devnet"}
                   </button>
                 )}
-                {transaction && (
+                {anchored && transaction && (
                   <a className="explorer-link" href={`https://explorer.solana.com/tx/${transaction}?cluster=devnet`} target="_blank" rel="noreferrer">
                     Open Solana receipt <ArrowUpRight size={15} />
                   </a>
@@ -1001,66 +1190,7 @@ export function PayProofApp() {
           </section>
         )}
 
-        {view === "verifier" && (
-          <section className="page-content verifier-page">
-            <div className="verifier-toolbar">
-              <div>
-                <span className="eyebrow">External verifier preview</span>
-                <h2>Lender sees the decision evidence, not the documents.</h2>
-              </div>
-              <span className="access-pill"><LockKeyhole size={15} /> Access expires in {consentDays} days</span>
-            </div>
-
-            <section className="verification-sheet">
-              <header>
-                <div className="verify-brand">
-                  <span className="brand-symbol">P</span>
-                  <div><strong>PayProof Verify</strong><small>Cryptographic commerce evidence</small></div>
-                </div>
-                <span className={commitment ? "verified-pill ready" : "verified-pill"}>
-                  {commitment ? <BadgeCheck size={16} /> : <CircleAlert size={16} />}
-                  {commitment ? "Credential valid" : "Credential pending"}
-                </span>
-              </header>
-              <div className="verify-hero">
-                <div>
-                  <span className="panel-kicker">Merchant claim</span>
-                  <h3>{decision}</h3>
-                  <p>For working-capital manual review. This is not a loan approval or bureau score.</p>
-                </div>
-                <div className="verify-score">
-                  <strong>{passCount}/{policy.length}</strong>
-                  <span>policy checks met</span>
-                </div>
-              </div>
-              <div className="verify-claims">
-                {shareRevenue && <VerifierClaim icon={Banknote} label="Revenue threshold" value={metrics.averageMonthly >= 35000 ? "Above ₹35,000 / month" : "Threshold not met"} />}
-                {shareStability && <VerifierClaim icon={Activity} label="Revenue stability" value={metrics.volatility <= 0.35 ? "Policy condition met" : "Manual review required"} />}
-                {shareSources && <VerifierClaim icon={GitMerge} label="Independent sources" value={`${metrics.sources} evidence types`} />}
-                <VerifierClaim icon={ShieldCheck} label="Evidence confidence" value={`${metrics.confidence}%`} />
-              </div>
-              <div className="verify-audit">
-                <div>
-                  <span>Evidence commitment</span>
-                  <code>{commitment || "Credential has not been generated"}</code>
-                </div>
-                <div>
-                  <span>Solana receipt</span>
-                  <code>{transaction || "Awaiting on-chain anchor"}</code>
-                </div>
-                <div>
-                  <span>Raw documents</span>
-                  <strong>Unavailable by design</strong>
-                </div>
-              </div>
-              <footer>
-                <span><ShieldCheck size={15} /> Issuer signature checked</span>
-                <span><FileCheck2 size={15} /> Policy receipt replayable</span>
-                <span><LockKeyhole size={15} /> Purpose-bound access</span>
-              </footer>
-            </section>
-          </section>
-        )}
+        {view === "verifier" && <ProofVerifier proof={anchored ? proofPackage : null} />}
       </main>
 
       {importOpen && (
@@ -1284,24 +1414,6 @@ function ChainStep({
     <div className="chain-step">
       <span className={done ? "done" : ""}>{done ? <Check size={16} /> : <Icon size={16} />}</span>
       <div><strong>{label}</strong><code>{value}</code></div>
-    </div>
-  );
-}
-
-function VerifierClaim({
-  icon: Icon,
-  label,
-  value,
-}: {
-  icon: typeof Banknote;
-  label: string;
-  value: string;
-}) {
-  return (
-    <div className="verifier-claim">
-      <span><Icon size={18} /></span>
-      <div><small>{label}</small><strong>{value}</strong></div>
-      <BadgeCheck size={18} />
     </div>
   );
 }
