@@ -62,11 +62,11 @@ jobs:
           cp -R "$export_root"/. pages-artifact/
           test -f pages-artifact/index.html
           grep -q "PayProof | Invisible Commerce Proof Network" pages-artifact/index.html
-          if ! grep -q "/payproof-solana-prototype/_next/" pages-artifact/index.html; then
-            find pages-artifact -type f -name '*.html' -exec \
-              sed -i 's|/_next/|/payproof-solana-prototype/_next/|g' {} +
-          fi
-          grep -q "/payproof-solana-prototype/_next/" pages-artifact/index.html
+
+          # Vinext currently emits root-relative Vite assets. GitHub project Pages
+          # hosts them below the repository path, so make that boundary explicit.
+          find pages-artifact -type f -name '*.html' -exec             sed -i               -e 's|"/assets/|"/payproof-solana-prototype/assets/|g'               -e 's|"/_next/|"/payproof-solana-prototype/_next/|g' {} +
+          grep -Eq '/payproof-solana-prototype/(assets|_next)/' pages-artifact/index.html
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
@@ -95,8 +95,7 @@ jobs:
           site="https://snakbillion.github.io/payproof-solana-prototype/"
           html=""
           for attempt in 1 2 3 4 5; do
-            html="$(curl -fsSL "$site?v=$GITHUB_SHA")" && \
-              grep -q "PayProof | Invisible Commerce Proof Network" <<<"$html" && break
+            html="$(curl -fsSL "$site?v=$GITHUB_SHA")" &&               grep -q "PayProof | Invisible Commerce Proof Network" <<<"$html" && break
             sleep 5
           done
           grep -q "PayProof | Invisible Commerce Proof Network" <<<"$html"
@@ -111,5 +110,6 @@ jobs:
               /*) asset_url="https://snakbillion.github.io$asset" ;;
               *) asset_url="$site$asset" ;;
             esac
+            echo "Checking $asset_url"
             curl -fsSL "$asset_url" > /dev/null
           done
