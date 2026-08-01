@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { access, readFile, readdir } from "node:fs/promises";
+import { access, readFile } from "node:fs/promises";
 import test from "node:test";
 
 async function render() {
@@ -57,6 +57,9 @@ test("ships persistent, independently verifiable proof infrastructure", async ()
   assert.match(protocolSource, /crypto\.subtle\.digest/);
   assert.match(protocolSource, /MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr/);
   assert.match(protocolSource, /getParsedTransaction/);
+  assert.match(protocolSource, /PP3/);
+  assert.match(protocolSource, /finalized/);
+  assert.match(protocolSource, /memoMatchesProof/);
   assert.match(vaultSource, /AES-GCM/);
   assert.match(verifierSource, /Independently verified/);
   assert.doesNotMatch(verifierSource, /Issuer signature checked/);
@@ -64,9 +67,6 @@ test("ships persistent, independently verifiable proof infrastructure", async ()
   assert.match(appSource, /papaparse/);
   assert.match(appSource, /NEXT_PUBLIC_BASE_PATH/);
   await assert.rejects(access(new URL("../index.html", import.meta.url)));
-  assert.deepEqual(
-    await readdir(new URL("../app/_sites-preview", import.meta.url)),
-    [],
-  );
+  await assert.rejects(access(new URL("../app/_sites-preview", import.meta.url)));
   await access(new URL("../public/og.png", import.meta.url));
 });
