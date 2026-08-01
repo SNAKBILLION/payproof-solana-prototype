@@ -52,7 +52,7 @@ publish merchant transactions. It is evidence infrastructure for human review.
 
 ## Grant ask
 
-Fund a 12-week pilot with 25 merchants and two lending or invoice-finance partners.
+Fund a 12-week pilot with 10 merchants and one lending or invoice-finance design partner.
 Milestones: authenticated case vault, issuer service, SAS attestation and revocation,
 lender policy templates, and measured reduction in manual verification time.
 

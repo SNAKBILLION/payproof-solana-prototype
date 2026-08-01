@@ -2,7 +2,7 @@
 
 [![Verify and publish PayProof](https://github.com/SNAKBILLION/payproof-solana-prototype/actions/workflows/deploy-pages.yml/badge.svg?branch=source-v4)](https://github.com/SNAKBILLION/payproof-solana-prototype/actions/workflows/deploy-pages.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-16a36a.svg)](LICENSE)
-[![Solana: Devnet](https://img.shields.io/badge/Solana-Devnet-5ee6a8.svg)](https://explorer.solana.com/tx/2ieUAnQb5ydKo9VyACzgXUAncfbB4Db04ciJBbs1HMXX2fGqQW66xQY82yK3hAFf7i9jhQEHB1ZqRbvSuPy1CiPN?cluster=devnet)
+[![Solana: Devnet](https://img.shields.io/badge/Solana-Devnet-5ee6a8.svg)](https://explorer.solana.com/tx/2ieUAnQb5ydKo9VyACzgXuAncfbB4Dbo4ciJBbs1HMXX2fGqQW66xQY82yK3hAFf7i9jhQEHBiZqRbvSuPy1CiPN?cluster=devnet)
 
 **Invisible commerce, verified.**
 
@@ -32,10 +32,10 @@ credit score or giving a lender access to the merchant's raw financial history.
 
 - Live product: https://snakbillion.github.io/payproof-solana-prototype/
 - Finalized Solana devnet receipt:
-  https://explorer.solana.com/tx/2ieUAnQb5ydKo9VyACzgXUAncfbB4Db04ciJBbs1HMXX2fGqQW66xQY82yK3hAFf7i9jhQEHB1ZqRbvSuPy1CiPN?cluster=devnet
+  https://explorer.solana.com/tx/2ieUAnQb5ydKo9VyACzgXuAncfbB4Dbo4ciJBbs1HMXX2fGqQW66xQY82yK3hAFf7i9jhQEHBiZqRbvSuPy1CiPN?cluster=devnet
 - Sample evidence bundle:
   https://snakbillion.github.io/payproof-solana-prototype/samples/payproof-pilot-evidence.zip
-- 90-second product demo:
+- Narrated product demo (under 90 seconds):
   https://snakbillion.github.io/payproof-solana-prototype/downloads/PayProof-90s-Demo.mp4
 - Six-slide grant deck:
   https://snakbillion.github.io/payproof-solana-prototype/downloads/PayProof-Grant-Deck.pptx

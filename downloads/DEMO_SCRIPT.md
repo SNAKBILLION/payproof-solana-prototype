@@ -1,37 +1,52 @@
-# PayProof 90-Second Demo Script
+# PayProof Demo Script
 
-## 00:00-00:10
+Final runtime: approximately 86 seconds. The published video includes narration
+and burned-in captions.
 
-Small merchants do not lack commerce. Their proof is trapped across orders,
-invoices, UPI settlements and bank credits.
+## 00:00-00:04 - PayProof
 
-## 00:10-00:27
+PayProof turns fragmented commerce into privacy-preserving decision evidence.
 
-PayProof imports those records locally. In this pilot, 28 records become 13
-reconciled revenue events. Every event preserves its evidence chain, match
-confidence and exceptions.
+## 00:04-00:17 - The problem
 
-## 00:27-00:44
+India's small merchants often have real revenue, but no salary slip and no clean
+financial file. Their proof is fragmented across orders, invoices, UPI settlements,
+and bank credits. Lenders must reconstruct it manually, or reject the case.
 
-The decision lab runs a replayable working-capital policy. It checks observed
-history, supported revenue, evidence triangulation, customer concentration and
-revenue stability. The result is second-look ready, not an automatic loan
-approval.
+## 00:17-00:30 - Evidence graph
 
-## 00:44-01:01
+PayProof imports those records inside a private browser vault. This pilot normalizes
+28 records and reconciles 12 events across independent sources. Every revenue event
+keeps its payer, amount, source chain, confidence, and exception reason.
 
-The merchant chooses what a lender can see and for how long. PayProof hashes
-the evidence into a Merkle root and creates a private credential commitment.
-Raw records never enter the lender view.
+## 00:30-00:43 - Decision lab
 
-## 01:01-01:17
+The decision lab runs a transparent working-capital policy. It checks observed
+history, verified revenue, cross-source triangulation, customer concentration, and
+revenue stability. The result is second-look ready for human review, never an
+automatic loan approval.
 
-The lender receives the threshold claim, policy receipt and cryptographic
-commitment. They can replay the policy and verify the on-chain receipt without
-downloading the merchant's financial history.
+## 00:43-00:53 - Proof passport
 
-## 01:17-01:30
+The merchant chooses the claims a verifier may see and sets a consent window.
+PayProof hashes the evidence into a Merkle root and creates a private credential
+commitment. Exact revenue and raw documents remain hidden.
 
-Solana is the trust rail, not a token. PayProof is moving from a devnet
-commitment to expiring and revocable Solana attestations, then into a 25-merchant
-pilot with lending partners.
+## 00:53-01:07 - Independent verifier
+
+A lender opens a portable verification link in any browser. PayProof recomputes the
+displayed claims, checks credential integrity, issuer authority, the on-chain
+commitment, issuance time, and consent expiry. No wallet access or PayProof database
+trust is required.
+
+## 01:07-01:16 - Finalized receipt
+
+This is the real finalized Solana devnet transaction. The issuer wallet signed it,
+the receipt is successful, and the exact transaction can be inspected independently
+in Solana Explorer.
+
+## 01:16-01:26 - Public proof
+
+The Memo contains only the commitment, evidence root, credential identifier, and
+consent dates. PayProof makes informal commerce portable without publishing a
+merchant's financial life. That is the product we are ready to pilot.

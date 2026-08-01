@@ -14,7 +14,7 @@ The current build is ready for technical review when the application includes:
 
 - live product URL;
 - public source repository;
-- 90-second product walkthrough;
+- narrated product walkthrough under 90 seconds;
 - one real devnet transaction;
 - one sample CSV bundle;
 - architecture and privacy diagram;
@@ -56,8 +56,8 @@ re-verified immediately before each application.
 
 ### Weeks 10-12: measured pilot
 
-- 25 merchants.
-- Two review partners.
+- 10 merchants.
+- One lender or invoice-finance design partner.
 - Compare manual verification time before and after PayProof.
 - Track evidence completion, policy replay and consent revocation.
 

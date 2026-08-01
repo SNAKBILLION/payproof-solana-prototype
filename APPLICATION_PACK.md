@@ -46,7 +46,7 @@ Evidence Import QA Pack:
 - Source: https://github.com/SNAKBILLION/payproof-solana-prototype
 - CI: https://github.com/SNAKBILLION/payproof-solana-prototype/actions
 - Devnet receipt:
-  https://explorer.solana.com/tx/2ieUAnQb5ydKo9VyACzgXUAncfbB4Db04ciJBbs1HMXX2fGqQW66xQY82yK3hAFf7i9jhQEHB1ZqRbvSuPy1CiPN?cluster=devnet
+  https://explorer.solana.com/tx/2ieUAnQb5ydKo9VyACzgXuAncfbB4Dbo4ciJBbs1HMXX2fGqQW66xQY82yK3hAFf7i9jhQEHBiZqRbvSuPy1CiPN?cluster=devnet
 - Demo:
   https://snakbillion.github.io/payproof-solana-prototype/downloads/PayProof-90s-Demo.mp4
 
@@ -82,7 +82,7 @@ Our live MIT-licensed product processes CSV and JSON evidence locally,
 reconciles records into a provenance graph, runs a replayable working-capital
 policy, and creates a consent-bound proof passport. The pilot processes 28
 records into 13 candidate commerce events, 12 of which are cross-source
-triangulated. Raw evidence remains off-chain. A compact PP3 commitment is signed
+triangulated. Raw evidence remains off-chain. A v3 credential commitment is signed
 by the issuer wallet and anchored through Solana Memo; the lender verifier then
 recomputes the displayed claims and checks the finalized receipt independently.
 
@@ -156,7 +156,7 @@ the forms:
 - [x] Consent-bound proof passport
 - [x] Downloadable sample evidence bundle
 - [x] Grant deck
-- [x] 90-second captioned demo
+- [x] Under-90-second narrated and captioned demo
 - [x] Finalized Solana devnet transaction linked in README
 - [x] Automated CI and live deployment smoke test
 - [ ] Founder profile, contact handles and KYC details

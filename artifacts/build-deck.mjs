@@ -1,8 +1,9 @@
 import fs from "node:fs/promises";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { Presentation, PresentationFile } from "@oai/artifact-tool";
 
-const root =
-  "C:/Users/accounts3/.codex/visualizations/2026/07/29/019fad9e-e9c5-7942-9864-3a11f8fe7290";
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const output = `${root}/artifacts/deck-render`;
 const shots = `${root}/artifacts/screenshots`;
 
@@ -114,14 +115,14 @@ async function addImage(slide, file, position, alt, fit = "contain") {
   box(slide, 566, 72, 658, 548, dark);
   await addImage(
     slide,
-    `${shots}/04-lender-verifier.png`,
+    `${shots}/04-independent-verifier.png`,
     { left: 590, top: 96, width: 610, height: 500 },
     "PayProof lender verifier",
     "contain",
   );
   footer(slide, 1);
   notes(slide, [
-    "https://payproof-network.rohiy1347.chatgpt.site/",
+    "https://snakbillion.github.io/payproof-solana-prototype/",
     "https://github.com/SNAKBILLION/payproof-solana-prototype",
   ]);
 }
@@ -196,7 +197,7 @@ async function addImage(slide, file, position, alt, fit = "contain") {
     "contain",
   );
   box(slide, 932, 110, 292, 74, dark);
-  text(slide, "28 → 13", 952, 118, 112, 32, 27, {
+  text(slide, "28 to 13", 952, 118, 112, 32, 27, {
     bold: true,
     color: white,
   });
@@ -210,7 +211,7 @@ async function addImage(slide, file, position, alt, fit = "contain") {
   footer(slide, 3);
   notes(slide, [
     "Screenshot captured from local working product using the downloadable sample CSV bundle.",
-    "https://payproof-network.rohiy1347.chatgpt.site/",
+    "https://snakbillion.github.io/payproof-solana-prototype/",
   ]);
 }
 
@@ -242,7 +243,7 @@ async function addImage(slide, file, position, alt, fit = "contain") {
   );
   const metrics = [
     ["5/5", "policy checks"],
-    ["₹39,767", "supported monthly revenue"],
+    ["Rs 39,767", "supported monthly revenue"],
     ["14%", "revenue volatility"],
   ];
   metrics.forEach(([value, label], i) => {
@@ -278,14 +279,14 @@ async function addImage(slide, file, position, alt, fit = "contain") {
   );
   await addImage(
     slide,
-    `${shots}/03-proof-passport.png`,
+    `${shots}/03-private-passport.png`,
     { left: 56, top: 230, width: 558, height: 350 },
     "Merchant proof passport",
     "contain",
   );
   await addImage(
     slide,
-    `${shots}/04-lender-verifier.png`,
+    `${shots}/04-independent-verifier.png`,
     { left: 666, top: 230, width: 558, height: 350 },
     "Lender verifier",
     "contain",
@@ -318,7 +319,7 @@ async function addImage(slide, file, position, alt, fit = "contain") {
   const stages = [
     ["01", "Issuer", "Authenticated case vault\nand issuer-controlled keys"],
     ["02", "Attestation", "SAS schema, expiry,\nverification and revocation"],
-    ["03", "Pilot", "25 merchants and two\nlending partners"],
+    ["03", "Pilot", "10 merchants and one\nlender design partner"],
     ["04", "Evidence", "Publish verification time,\nexceptions and learnings"],
   ];
   stages.forEach(([num, title, detail], i) => {
@@ -329,17 +330,17 @@ async function addImage(slide, file, position, alt, fit = "contain") {
     text(slide, detail, x, 338, 230, 78, 17, { color: muted });
   });
   box(slide, 56, 480, 1168, 136, dark);
-  text(slide, "$10,000", 84, 500, 220, 54, 42, {
+  text(slide, "$5,000", 84, 500, 220, 54, 42, {
     bold: true,
     color: green,
   });
   text(slide, "grant ask", 84, 554, 180, 28, 16, { color: "#B6C2BC" });
-  text(slide, "25", 370, 500, 100, 54, 42, { bold: true, color: white });
+  text(slide, "10", 370, 500, 100, 54, 42, { bold: true, color: white });
   text(slide, "merchant cases", 370, 554, 180, 28, 16, {
     color: "#B6C2BC",
   });
-  text(slide, "2", 640, 500, 80, 54, 42, { bold: true, color: white });
-  text(slide, "lending partners", 640, 554, 180, 28, 16, {
+  text(slide, "1", 640, 500, 80, 54, 42, { bold: true, color: white });
+  text(slide, "lender design partner", 640, 554, 200, 28, 16, {
     color: "#B6C2BC",
   });
   text(slide, "12 weeks", 910, 500, 220, 54, 42, {
