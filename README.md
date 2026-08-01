@@ -1,5 +1,9 @@
 # PayProof
 
+[![Verify and publish PayProof](https://github.com/SNAKBILLION/payproof-solana-prototype/actions/workflows/deploy-pages.yml/badge.svg?branch=source-v4)](https://github.com/SNAKBILLION/payproof-solana-prototype/actions/workflows/deploy-pages.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-16a36a.svg)](LICENSE)
+[![Solana: Devnet](https://img.shields.io/badge/Solana-Devnet-5ee6a8.svg)](https://explorer.solana.com/tx/2ieUAnQb5ydKo9VyACzgXUAncfbB4Db04ciJBbs1HMXX2fGqQW66xQY82yK3hAFf7i9jhQEHB1ZqRbvSuPy1CiPN?cluster=devnet)
+
 **Invisible commerce, verified.**
 
 PayProof turns fragmented orders, invoices, UPI settlements and bank credits into
@@ -22,10 +26,13 @@ credit score or giving a lender access to the merchant's raw financial history.
 - Hash source evidence into a Merkle root and SHA-256 credential commitment.
 - Show a verifier only the allowed claims, never the raw source records.
 - Connect Phantom or Solflare and anchor the commitment through Solana Memo on devnet.
+- Verify the finalized receipt, issuer signer, commitment and consent expiry independently.
 
-## Submission kit
+## Verified proof of work
 
 - Live product: https://snakbillion.github.io/payproof-solana-prototype/
+- Finalized Solana devnet receipt:
+  https://explorer.solana.com/tx/2ieUAnQb5ydKo9VyACzgXUAncfbB4Db04ciJBbs1HMXX2fGqQW66xQY82yK3hAFf7i9jhQEHB1ZqRbvSuPy1CiPN?cluster=devnet
 - Sample evidence bundle:
   https://snakbillion.github.io/payproof-solana-prototype/samples/payproof-pilot-evidence.zip
 - 90-second product demo:
@@ -42,8 +49,8 @@ credit score or giving a lender access to the merchant's raw financial history.
 3. Run the working-capital second-look policy.
 4. Choose claims and consent expiry.
 5. Generate the private commitment.
-6. Open the lender view.
-7. Optionally connect a Solana wallet and anchor the commitment on devnet.
+6. Optionally connect a Solana wallet and anchor the commitment on devnet.
+7. Share the proof URL and verify it independently in the lender view.
 
 ## Local development
 
@@ -81,7 +88,7 @@ files are processed in the browser and are not uploaded by the current product.
 ## Verification protocol
 
 The canonical source lives on the `source-v4` branch. Every push is linted, tested,
-built and deployed through GitHub Actions.
+built, deployed and smoke-tested through GitHub Actions.
 
 PayProof proof packages are schema-validated before use. New receipts write a compact
 `PP3` envelope to Solana Memo containing only the credential commitment, evidence
@@ -118,8 +125,10 @@ credential commitment and minimal proof metadata are written to Solana.
 
 ## Current scope
 
-This repository is a working technical pilot with a real Solana devnet transaction
-and independent verification path. It is not yet a production lending system.
-Production rollout still requires authenticated case storage, audited source
+This repository is a working technical pilot with a real finalized Solana devnet
+transaction and independent verification path. It is not yet a production lending
+system. Production rollout still requires authenticated case storage, audited source
 adapters, managed issuer keys, revocation/status infrastructure, lender organization
 controls, monitoring and repayment outcome attestations.
+
+Released under the [MIT License](LICENSE).
