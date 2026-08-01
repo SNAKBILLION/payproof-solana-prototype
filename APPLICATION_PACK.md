@@ -1,146 +1,180 @@
 # PayProof Funding Application Pack
 
-Verified on 31 July 2026. Submit in this order.
+Verified on 1 August 2026. Submit only through the two active routes below.
 
-## 1. Colosseum Eternal
+## Submission order
 
-**Priority:** Immediate
+1. Agentic Engineering Grant: submit first for the seven-day shipping milestone.
+2. Solana Foundation India Grant: submit after the Agentic application is recorded.
+3. Do not submit to Colosseum Eternal while the official page says it is paused.
+4. Do not duplicate the India proposal in the global Foundation form. Revisit the
+   global convertible grant after a lender pilot letter and measurable merchant usage.
 
-**Status:** Open. Builders start a four-week sprint, post a one-minute update
-each week, and submit a working Solana product. The strongest submissions can
-be considered for the Eternal Award, Colosseum's accelerator, and a $250,000
-pre-seed investment.
+## 1. Agentic Engineering Grant
 
-**Apply:** https://colosseum.com/eternal
+**Status:** Active, global, 200 USDG, listed average response time of one week.
 
-### Project summary
+**Apply:** https://superteam.fun/earn/grants/agentic-engineering/
 
-PayProof is an evidence network for small merchants whose real commerce is
-fragmented across orders, invoices, UPI settlements and bank credits. It
-reconciles those independent records into a provenance graph, runs a replayable
-working-capital policy, and lets the merchant share a consent-bound claim
-instead of raw financial history. The working product imports local CSV/JSON
-evidence, resolves cross-source revenue events, exposes every decision reason,
-creates a SHA-256/Merkle commitment, and can anchor that commitment on Solana
-devnet. The lender receives a verifiable threshold claim and policy receipt,
-while source documents remain unavailable by design.
+### One-liner
 
-### Why this can become a company
+AI-assisted private commerce proofs on Solana.
 
-Lenders and invoice-finance providers spend time manually reconstructing
-merchant cashflow from incompatible evidence. PayProof sells verification
-infrastructure, not credit. A lender pays per reviewed case or through an API
-subscription; merchants retain control of reusable proof passports. The wedge
-is a second-look workflow for thin-file Indian merchants. The network expands
-as repayment outcomes improve policy calibration and portable attestations
-reduce repeated verification across lenders.
+### What has already shipped
 
-### Four-week sprint
+PayProof is a live Solana product for thin-file merchants. It imports fragmented
+orders, invoices, bank credits and UPI settlements, reconciles them into a
+provenance graph, runs an explainable lender policy, generates a
+selective-disclosure credential, and anchors a compact commitment on Solana
+devnet. The public verifier independently checks the commitment, issuer signer,
+finalized receipt and consent expiry without exposing raw financial documents.
 
-1. Week 1: onboard five merchants and complete evidence-quality interviews.
-2. Week 2: ship authenticated case storage and issuer-controlled credentials.
-3. Week 3: replace the Memo commitment with Solana Attestation Service schema,
-   issuance, expiry and revocation.
-4. Week 4: run lender review sessions, publish measured verification time, and
-   submit the working pilot with repository, devnet receipts and demo.
+### Seven-day deliverable
 
-### Weekly proof
+Use the grant for one month of an advanced AI coding tool and ship the PayProof
+Evidence Import QA Pack:
 
-- Product URL and public repository
-- New merchant cases processed
-- Reconciliation accuracy and unresolved-event count
-- Lender interviews and workflow changes made
-- Devnet attestation or transaction links
+1. Add adversarial CSV fixtures for duplicate, malformed and conflicting records.
+2. Add automatic field mapping diagnostics and visible rejection reasons.
+3. Add reconciliation regression tests for payer, amount and date tolerances.
+4. Publish a short technical build log and an independently verifiable devnet proof.
+5. Keep the implementation and test corpus MIT licensed.
+
+### Proof of work
+
+- Product: https://snakbillion.github.io/payproof-solana-prototype/
+- Source: https://github.com/SNAKBILLION/payproof-solana-prototype
+- CI: https://github.com/SNAKBILLION/payproof-solana-prototype/actions
+- Devnet receipt:
+  https://explorer.solana.com/tx/2ieUAnQb5ydKo9VyACzgXUAncfbB4Db04ciJBbs1HMXX2fGqQW66xQY82yK3hAFf7i9jhQEHB1ZqRbvSuPy1CiPN?cluster=devnet
+- Demo:
+  https://snakbillion.github.io/payproof-solana-prototype/downloads/PayProof-90s-Demo.mp4
+
+### Completion evidence
+
+A reviewer can import the adversarial fixtures, inspect accepted and rejected
+records, run the decision policy, create a credential, and verify the resulting
+Solana receipt. CI must pass lint, protocol tests, rendered-app tests, build,
+deployment and live asset smoke checks.
 
 ## 2. Solana Foundation India Grant
 
-**Priority:** Apply after the fresh devnet receipt is in the repository
+**Status:** Active regional grant for India, up to 10,000 USDG, listed average
+response time of 30 days. Superteam Earn KYC is mandatory before payment.
 
-**Status:** Active regional grant for India. Up to $10,000 USDG, with a listed
-average response time of 30 days.
+**Recommended request:** 5,000 USDG. This is close to the listing's current
+average grant size and is proportional to PayProof's present pilot stage.
 
-**Apply:** https://superteam.fun/earn/grants/solana-foundation-india-grants
+**Apply:** https://superteam.fun/earn/grants/solana-foundation-india-grants/
 
-### 150-word application answer
+### Ten-word one-liner
 
-PayProof helps Indian UPI-first merchants prove commerce without surrendering
-their full bank history. Orders, invoices, settlements and credits are often
-real but disconnected, forcing lenders into expensive manual verification or
-excluding the merchant entirely. Our live product processes CSV/JSON evidence
-locally, reconciles records into a provenance graph, runs an explainable
-second-look policy, and creates a selective-disclosure proof passport. The
-current pilot converts 28 independent records into 13 commerce events with 92%
-cross-source coverage and a replayable 5/5 policy receipt. Raw evidence remains
-off-chain; Solana provides the neutral commitment and verification rail.
+Private, verifiable commerce credentials for India's thin-file merchants.
 
-We are requesting $10,000 for a 12-week pilot with 25 merchants and two lending
-or invoice-finance partners. We will ship authenticated case storage, issuer
-key management, a Solana Attestation Service schema with expiry and revocation,
-lender policy templates, and a public reference verifier. We will publish the
-schema, verifier and non-sensitive reconciliation learnings as open source.
+### Project summary
 
-### Milestones and budget
+PayProof helps Indian UPI-first merchants prove real commerce without
+surrendering their complete bank history. Orders, invoices, settlements and
+credits are often genuine but disconnected, forcing lenders into expensive
+manual reconstruction or excluding the merchant entirely.
 
-| Milestone | Deliverable | Budget |
-| --- | --- | ---: |
-| 1 | Authenticated case vault, consent log and issuer service | $2,500 |
-| 2 | SAS schema, issuance, verification, expiry and revocation | $3,000 |
-| 3 | 25-merchant data-quality pilot and reconciliation QA | $2,000 |
-| 4 | Two lender workflow pilots and policy-template API | $1,500 |
-| 5 | Open reference verifier, findings report and security review | $1,000 |
+Our live MIT-licensed product processes CSV and JSON evidence locally,
+reconciles records into a provenance graph, runs a replayable working-capital
+policy, and creates a consent-bound proof passport. The pilot processes 28
+records into 13 candidate commerce events, 12 of which are cross-source
+triangulated. Raw evidence remains off-chain. A compact PP3 commitment is signed
+by the issuer wallet and anchored through Solana Memo; the lender verifier then
+recomputes the displayed claims and checks the finalized receipt independently.
+
+PayProof is decision evidence for human review, not a credit bureau score or an
+automatic loan approval system.
 
 ### Why Solana
 
-PayProof needs inexpensive, high-throughput attestations that can be checked by
-many independent verifiers without putting raw financial data on-chain. Solana
-Attestation Service provides issuer credentials, schemas, authorized signers,
-expiry and account-bound attestations. This makes the trust object portable,
-revocable and composable while the sensitive evidence stays off-chain.
+PayProof needs low-cost, high-throughput credentials that can be checked by
+independent lenders without placing sensitive financial records on-chain.
+Solana provides a neutral, portable receipt and issuer-signature rail. The next
+milestone replaces the current Memo pilot with a Solana Attestation Service
+schema supporting authorized issuers, expiry, revocation and account-bound
+credentials. The open schema and reference verifier will be usable by lending,
+invoice-finance, rental and B2B marketplace applications.
 
-## 3. Solana Foundation Funding
+### Evidence of execution
 
-**Priority:** Apply as a convertible grant after one lender pilot letter
+- Live application and user flow are public.
+- Wallet signing and finalized devnet anchoring work.
+- The proof URL verifies in a separate browser without wallet access.
+- The verifier checks claims, issuer authority, on-chain commitment and expiry.
+- CI runs lint, six automated tests, static build, deployment and HTTP asset smoke.
+- Source is public under the MIT License.
 
-**Status:** Rolling applications. The Foundation lists approximately one week
-for initial review and approximately three weeks for a decision.
+### Twelve-week milestones and budget
 
-**Apply:** https://solana.org/grants-funding
+| Milestone | Deliverable | Success measure | Budget |
+| --- | --- | --- | ---: |
+| 1 | Authenticated case vault and audited import adapters | 4 source types, encrypted cases, audit log | 1,200 USDG |
+| 2 | SAS schema, issuer service, expiry and revocation | Public schema and reference verifier on devnet | 1,500 USDG |
+| 3 | Ten-merchant evidence-quality pilot | Reconciliation accuracy and exception report | 1,000 USDG |
+| 4 | One lender or invoice-finance design pilot | Two review sessions and policy template | 800 USDG |
+| 5 | Open specification, security review and findings report | Reproducible SDK docs and public report | 500 USDG |
 
-### Public-good framing
+### Public-good commitment
 
-The open component is a reusable Solana commerce-attestation schema, reference
-issuer, reference verifier and test corpus for privacy-safe off-chain evidence
-commitments. Any lending, invoice-finance, rental or B2B marketplace product
-could verify the same claims without depending on PayProof's commercial case
-management service.
+The Solana credential schema, canonical serialization, reference verifier,
+test vectors and non-sensitive reconciliation findings will remain open source.
+Commercial work may later include hosted case management and lender workflow
+APIs, but no lender will need to trust a private PayProof database to verify an
+issued credential.
 
-### Requested outcome
+### What funding unlocks
 
-Fund the open attestation and verifier layer; use a convertible grant for the
-commercial hosted workflow. Do not pitch the application as a generic lending
-app or token project.
+The grant converts a verified technical pilot into a revocable attestation
+protocol and a measured India pilot. Funding is not requested for a token,
+lending capital, speculative incentives or a marketing-only launch.
 
-## Submission Checklist
+## Required account details
+
+These cannot be committed to the public repository. Prepare them before opening
+the forms:
+
+- Founder legal name
+- India residence and KYC-ready identity
+- Email and Telegram/X contact
+- Superteam Earn profile
+- Solana payout wallet
+- Team member names and roles
+- Weekly time commitment
+- Any previous bounties, repositories or shipped products
+
+## Submission checklist
 
 - [x] Public product URL
 - [x] Public GitHub repository
+- [x] MIT license
 - [x] Working multi-file evidence import
 - [x] Explainable decision receipt
 - [x] Consent-bound proof passport
 - [x] Downloadable sample evidence bundle
 - [x] Grant deck
 - [x] 90-second captioned demo
-- [ ] Fresh Solana devnet transaction linked in repository
-- [ ] Two merchant interview notes
-- [ ] One lender or invoice-finance pilot letter
-- [ ] Founder profile, email and KYC details
+- [x] Finalized Solana devnet transaction linked in README
+- [x] Automated CI and live deployment smoke test
+- [ ] Founder profile, contact handles and KYC details
+- [ ] Two anonymized merchant interview notes
+- [ ] One lender or invoice-finance design-partner note
 
-## Official Sources
+## Deferred routes
 
-- Colosseum Eternal: https://colosseum.com/eternal
-- Colosseum accelerator: https://colosseum.com/accelerator
-- Solana Foundation funding: https://solana.org/grants-funding
-- Superteam India grant:
-  https://superteam.fun/earn/grants/solana-foundation-india-grants
-- Solana Attestation Service:
-  https://solana.com/docs/tools/attestations/instructions/create-attestation
+### Colosseum Eternal
+
+The official Eternal page currently says the program is paused and is not
+accepting new participants. Do not start or claim an Eternal submission until
+that status changes.
+
+### Solana Foundation global funding
+
+The global Foundation form is rolling, but PayProof is currently a commercial
+product with an open protocol component. Apply later as a convertible/public-good
+proposal after producing a lender pilot letter, the SAS reference implementation
+and evidence that third parties can reuse the verifier. Avoid sending the same
+proposal through both the India and global Foundation routes simultaneously.
