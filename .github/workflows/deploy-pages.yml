@@ -96,9 +96,15 @@ jobs:
           done
           grep -q "PayProof | Invisible Commerce Proof Network" <<<"$html"
           mapfile -t assets < <(
-            grep -oE '/payproof-solana-prototype/[^"]+\.(js|css)' <<<"$html" | sort -u
+            grep -oE '(src|href)="[^"]+\.(js|css)"' <<<"$html" |
+              sed -E 's/^(src|href)="//; s/"$//' | sort -u
           )
           test "${#assets[@]}" -gt 0
           for asset in "${assets[@]}"; do
-            curl -fsSL "https://snakbillion.github.io$asset" > /dev/null
+            case "$asset" in
+              https://*) asset_url="$asset" ;;
+              /*) asset_url="https://snakbillion.github.io$asset" ;;
+              *) asset_url="$site$asset" ;;
+            esac
+            curl -fsSL "$asset_url" > /dev/null
           done
