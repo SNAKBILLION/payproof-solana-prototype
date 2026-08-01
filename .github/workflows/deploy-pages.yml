@@ -48,13 +48,24 @@ jobs:
           NEXT_PUBLIC_BASE_PATH: /payproof-solana-prototype
         run: pnpm build
 
-      - name: Verify static export
-        run: test -f out/index.html
+      - name: Package static export
+        shell: bash
+        run: |
+          export_index="$(find . -maxdepth 5 -type f -name index.html ! -path './node_modules/*' ! -path './.git/*' | head -n 1)"
+          if [ -z "$export_index" ]; then
+            echo "No static index.html was produced."
+            exit 1
+          fi
+          export_root="$(dirname "$export_index")"
+          echo "Packaging GitHub Pages export from $export_root"
+          mkdir -p pages-artifact
+          cp -R "$export_root"/. pages-artifact/
+          test -f pages-artifact/index.html
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: out
+          path: pages-artifact
 
   deploy:
     environment:
