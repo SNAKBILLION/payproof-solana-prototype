@@ -68,8 +68,17 @@ export function ProofVerifier({ proof, external = false, onBack }: Props) {
   }, [proof]);
 
   useEffect(() => {
-    void verify();
-  }, [verify]);
+    let active = true;
+    if (!proof) return () => {
+      active = false;
+    };
+    void verifyProofPackage(proof).then((nextResult) => {
+      if (active) setResult(nextResult);
+    });
+    return () => {
+      active = false;
+    };
+  }, [proof]);
 
   async function copyLink() {
     if (!proof) return;
